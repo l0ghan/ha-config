@@ -1,5 +1,4 @@
-# My Home Assistant Config
-Example [Home Assistant](https://home-assistant.io) Configs
+# My [Home Assistant](https://home-assistant.io) Config
 
 My HA installation runs on a Pi 3 with the following:
 
@@ -8,7 +7,8 @@ Software
 * [Plex Media Server](https://plex.tv)
 * [Homebridge](https://github.com/nfarina/homebridge) *for Apple HomeKit Support*
 * [Pi-hole](https://pi-hole.net/) *for network-wide adblocker*
-* [Pivpn](http://www.pivpn.io/) *for VPN into my house from anywhere*
+* [PiVPN](http://www.pivpn.io/) *for VPN into my house from anywhere*
+* [LetsEncrypt](https://letsencrypt.org/) *for the SSL on my HA domain*
 
 Hardware
 --------
