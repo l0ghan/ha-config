@@ -36,10 +36,30 @@
     fibaro_office_battery_level:
       unit_of_measurement: '%'
       value_template: "{{ states.zwave.office_motion.attributes.battery_level | default(0) | int }}"
+      icon_template: >
+        {% set battery_level = states.zwave.office_motion.attributes.battery_level | default(0) | int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
     fibaro_thomas_battery_level:
       unit_of_measurement: '%'
       value_template: "{{ states.zwave.thomas.attributes.battery_level  | default(0) | int  }}"
-      
+      icon_template: >
+        {% set battery_level = states.zwave.thomas.attributes.battery_level | default(0) | int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+
 - platform: pi_hole
   monitored_conditions:
     - ads_blocked_today
