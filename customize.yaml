@@ -122,3 +122,7 @@ sensor.fibaro_office_battery_level:
   friendly_name: Office Fibaro
 sensor.fibaro_thomas_battery_level:
   friendly_name: Thomas' Fibaro
+switch.pihole:
+  friendly_name: Pi-Hole Enabled
+group.pihole_stats:
+  friendly_name: Pi-Hole Stats
