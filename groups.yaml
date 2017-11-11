@@ -61,7 +61,8 @@ links:
 motion:
   entities:
     - input_boolean.enable_security
-    - group.all_motion_sensors
+    - binary_sensor.thomas_sensor
+    - binary_sensor.office_motion_sensor
 
 lights:
   entities:
@@ -137,3 +138,4 @@ processes:
     - sensor.process_openvpn
     - sensor.process_plex_media_server
     - sensor.process_pureftpd
+    - sensor.process_homebridge

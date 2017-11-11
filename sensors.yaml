@@ -30,7 +30,9 @@
       arg: pure-ftpd
     - type: process
       arg: openvpn
-      
+    - type: process
+      arg: homebridge
+
 - platform: template
   sensors:
     fibaro_office_battery_level:

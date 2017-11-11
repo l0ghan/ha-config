@@ -51,6 +51,7 @@ group.batteries:
   friendly_name: Batteries
 group.weather:
   friendly_name: Weather
+  homebridge_hidden: true
 sensor.office_motion_general:
   hidden: true
 sensor.office_motion_luminance:
@@ -67,6 +68,7 @@ group.thomas:
   friendly_name: Thomas
 sensor.thomas_luminance:
   friendly_name: Thomas' Room Brightness
+  homebridge_hidden: true
 binary_sensor.thomas_sensor:
   friendly_name: Thomas' Room Motion
 sensor.thomas_temperature:
@@ -117,7 +119,9 @@ weblink.transmission:
   icon: mdi:magnet-on
 sensor.last_backup:
   icon: mdi:backup-restore
-input_boolean.enable_security: {}
+input_boolean.enable_security:
+  friendly_name: Enable Security
+  icon: mdi:shield-half-full
 sensor.fibaro_office_battery_level:
   friendly_name: Office Fibaro
 sensor.fibaro_thomas_battery_level:
@@ -126,3 +130,16 @@ switch.pihole:
   friendly_name: Pi-Hole Enabled
 group.pihole_stats:
   friendly_name: Pi-Hole Stats
+group.all_automations:
+  homebridge_hidden: true
+group.all_devices:
+  homebridge_hidden: true
+group.pi_status:
+  homebridge_hidden: true
+switch.wake_on_lan:
+  homebridge_hidden: true
+switch.flux:
+  homebridge_hidden: true
+sensor.process_homebridge:
+  friendly_name: HomeBridge
+  icon: mdi:home-automation
