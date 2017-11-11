@@ -43,6 +43,11 @@ all_cameras:
     - camera.drive
     - camera.garden
 
+all_motion_sensors:
+  entities:
+    - binary_sensor.thomas_sensor
+    - binary_sensor.office_motion_sensor
+
 links:
   entities:
     - weblink.foscam_drive
@@ -55,8 +60,8 @@ links:
 
 motion:
   entities:
-    - binary_sensor.thomas_sensor
-    - binary_sensor.office_motion_sensor
+    - input_boolean.enable_security
+    - group.all_motion_sensors
 
 lights:
   entities:

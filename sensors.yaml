@@ -46,3 +46,6 @@
     - ads_percentage_today
     - unique_clients
 
+- platform: command_line
+  name: Last Backup
+  command: "cat /home/homeassistant/.homeassistant/lastbackup.txt"

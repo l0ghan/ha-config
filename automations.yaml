@@ -13,15 +13,15 @@
   - data:
       entity_id: switch.desk_lights_switch
     service: switch.turn_off
-  alias: Turn off office lights
+  alias: Turn off office lights when there is no longer any motion
   condition: []
   id: '1510273028657'
   trigger:
   - entity_id: binary_sensor.office_motion_sensor
-    platform: state
-    to: 'off'
     for:
       minutes: 10
+    platform: state
+    to: 'off'
 - action:
   - data:
       entity_id: light.dining_room
@@ -52,10 +52,28 @@
   - data:
       title: House is empty. Enabling motion sensors...
     service: notify.ios_gregs_iphone_8
-  alias: Alert when house is empty
+  alias: Alert when house becomes empty
   condition: []
   id: '1510432731633'
   trigger:
   - entity_id: group.family
     platform: state
     to: not_home
+- action:
+  - data:
+      message: A motion alert has been tripped in the house
+      title: Motion alert!
+    service: notify.ios_gregs_iphone_8
+  alias: Alert on motion if house is empty
+  condition:
+  - condition: state
+    entity_id: input_boolean.enable_security
+    state: 'on'
+  - condition: state
+    entity_id: group.family
+    state: not_home
+  id: '1510437227399'
+  trigger:
+  - entity_id: group.all_motion_sensors
+    platform: state
+    to: 'on'

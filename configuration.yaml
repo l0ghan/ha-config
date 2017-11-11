@@ -56,3 +56,7 @@ switch:
   - platform: flux
     lights:
       - light.bedroom
+
+input_boolean:
+  enable_security:
+    initial: on

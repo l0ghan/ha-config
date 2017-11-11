@@ -117,3 +117,4 @@ weblink.transmission:
   icon: mdi:magnet-on
 sensor.last_backup:
   icon: mdi:backup-restore
+input_boolean.enable_security: {}
