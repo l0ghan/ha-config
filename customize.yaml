@@ -120,7 +120,5 @@ sensor.last_backup:
 input_boolean.enable_security: {}
 sensor.fibaro_office_battery_level:
   friendly_name: Office Fibaro
-  icon: mdi:battery-90
 sensor.fibaro_thomas_battery_level:
   friendly_name: Thomas' Fibaro
-  icon: mdi:battery-90
