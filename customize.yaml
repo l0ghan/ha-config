@@ -115,3 +115,5 @@ weblink.router:
   icon: mdi:router-wireless
 weblink.transmission:
   icon: mdi:magnet-on
+sensor.last_backup:
+  icon: mdi:backup-restore
