@@ -9,6 +9,9 @@ homeassistant:
 
 frontend:
   themes: !include themes.yaml
+  extra_html_url:
+    - /local/custom_ui/state-card-floorplan.html
+
 config:
 http:
   api_password: !secret http_password
@@ -69,3 +72,10 @@ switch:
 input_boolean:
   enable_security:
     initial: on
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
