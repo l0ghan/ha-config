@@ -31,6 +31,13 @@ weblink: !include weblinks.yaml
 discovery:
 history:
 logbook:
+  exclude:
+    entities:
+      - sensor.average_load_15m
+      - sensor.average_load_1m
+      - sensor.average_load_5m
+      - group.all_motion_sensors
+      - group.thomas
 logger:
   default: warn
   logs:
