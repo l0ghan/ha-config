@@ -31,21 +31,12 @@
             - state: 'off'
               class: 'unclickable'
 
-        - name: Sensors
+        - name: Weather Temperature
           entities:
              -  sensor.dark_sky_apparent_temperature
           #text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
           text_template: '${entity.state} °c'
-          class_template: '
-            var temp = parseFloat(entity.state.replace("°", ""));
-            if (temp < 10)
-              return "temp-low";
-            else if (temp < 30)
-              return "temp-medium";
-            else
-              return "temp-high";
-            '
 
         - name: Lights
           entities:

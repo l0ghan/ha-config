@@ -12,7 +12,7 @@ svg, svg * {
   stroke-opacity: 1 !important;
 }
 
-transparent {
+.transparent {
   opacity: 0.2;
   filter: alpha(opacity=20); /* For IE8 and earlier */
 }
@@ -23,8 +23,12 @@ transparent {
   fill: #c09e9d !important;
 }
 
-unclickable {
+.unclickable {
   pointer-events: none;
+}
+
+.invisible {
+  display: none;
 }
 
 .danger-background, .danger-text-background {
