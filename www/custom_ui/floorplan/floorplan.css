@@ -23,6 +23,10 @@ transparent {
   fill: #c09e9d !important;
 }
 
+unclickable {
+  pointer-events: none;
+}
+
 .danger-background, .danger-text-background {
   fill: #df2b2b !important;
   fill-opacity: 1 !important;

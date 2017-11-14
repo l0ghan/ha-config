@@ -28,6 +28,8 @@
           states:
             - state: 'on'
               class: 'danger-background'
+            - state: 'off'
+              class: 'unclickable'
 
         - name: Sensors
           entities:

@@ -143,6 +143,6 @@ switch.flux:
 sensor.process_homebridge:
   friendly_name: HomeBridge
   icon: mdi:home-automation
-binary_sensor.floorplan:
-  custom_ui_state_card: state-card-floorplan
-  config: !include floorplan.yaml
+# binary_sensor.floorplan:
+#   custom_ui_state_card: state-card-floorplan
+#   config: !include floorplan.yaml

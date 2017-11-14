@@ -82,13 +82,13 @@ input_boolean:
 
 panel_custom:
   - name: floorplan
-    sidebar_title: Floor Plan (Mobile)
-    sidebar_icon: mdi:floor-plan
-    url_path: floorplan
-    config: !include floorplan.yaml
-
-  - name: floorplan
     sidebar_title: Floor Plan (Desktop)
     sidebar_icon: mdi:floor-plan
-    url_path: floorplan2
+    url_path: desktop
     config: !include floorplan2.yaml
+
+  - name: floorplan
+    sidebar_title: Floor Plan (Mobile)
+    sidebar_icon: mdi:floor-plan
+    url_path: mobile
+    config: !include floorplan.yaml
