@@ -23,3 +23,12 @@ Hardware
 ![UI](/images/home.png)
 ![UI](/images/rooms.png)
 ![UI](/images/network.png)
+
+Floorplan:
+
+![UI](/images/floorplan.png)
+
+* Dark grey rooms can't be controlled as they have no zwave lights in yet
+* Lights in the light grey rooms can be turned on/off
+* Yellow rooms are rooms with lights already turned on
+* The diagonally hatched rooms are rooms with currently detected motion
