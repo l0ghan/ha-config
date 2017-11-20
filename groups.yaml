@@ -6,10 +6,7 @@ default_view:
     - group.lights
     - group.motion
     - group.weather
-    - camera.thomas
-    - camera.drive
-    - camera.garden
-    - camera.hall
+
 
 cameras:
   view: yes
@@ -24,8 +21,6 @@ rooms:
     - group.office
     - group.thomas
     - group.diningroom
-    - camera.thomas
-    - camera.hall
 
 network:
   view: yes
@@ -40,6 +35,7 @@ all_cameras:
   entities:
     - camera.thomas
     - camera.hall
+    - camera.landing
     - camera.drive
     - camera.garden
 

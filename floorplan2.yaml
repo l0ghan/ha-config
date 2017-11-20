@@ -23,6 +23,13 @@
             - state: 'SEL'
               class: 'transparent'
 
+        - name: Media Players
+          entities:
+            - media_player.bedroom
+          states:
+            - state: 'off'
+              class: 'invisible'
+              
         - name: Motion
           entities:
             - binary_sensor.thomas_sensor
