@@ -135,6 +135,7 @@ family:
 pi_status:
   name: Server Status
   entities:
+    - sensor.since_last_boot
     - sensor.average_load_1m
     - sensor.average_load_5m
     - sensor.average_load_15m

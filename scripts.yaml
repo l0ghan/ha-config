@@ -10,6 +10,10 @@ camera_thomas_door:
   sequence:
     - service: shell_command.thomas_camera_door
 
+camera_thomas_reboot:
+  sequence:
+    - service: shell_command.thomas_camera_reboot
+
 hall_camera_enable_detection:
   sequence:
     - service: shell_command.hall_camera_enable_detection
