@@ -77,3 +77,14 @@
   - entity_id: group.all_motion_sensors
     platform: state
     to: 'on'
+- action:
+  - service: shell_command.hall_camera_enable_detection
+  - data: {}
+    service: shell_command.landing_camera_enable_detection
+  alias: Enable camera recording when house is empty
+  condition: []
+  id: '1511218490670'
+  trigger:
+  - entity_id: group.family
+    platform: state
+    to: not_home

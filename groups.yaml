@@ -57,8 +57,6 @@ camera_garden:
 
 camera_controls:
   entities:
-    - script.hall_camera_disable_detection
-    - script.hall_camera_enable_detection
     - script.camera_thomas_bed
     - script.camera_thomas_door
     - script.camera_thomas_floor

@@ -35,6 +35,7 @@ logbook:
     entities:
       - sensor.average_load_15m
       - sensor.average_load_1m
+      - sensor.since_last_boot
       - sensor.average_load_5m
       - group.all_motion_sensors
       - group.thomas

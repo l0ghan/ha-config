@@ -21,3 +21,12 @@ hall_camera_enable_detection:
 hall_camera_disable_detection:
   sequence:
     - service: shell_command.hall_camera_disable_detection
+
+
+landing_camera_enable_detection:
+  sequence:
+    - service: shell_command.landing_camera_enable_detection
+
+landing_camera_disable_detection:
+  sequence:
+    - service: shell_command.landing_camera_disable_detection
