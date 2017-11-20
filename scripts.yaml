@@ -1,0 +1,19 @@
+camera_thomas_bed:
+  sequence:
+    - service: shell_command.thomas_camera_bed
+
+camera_thomas_floor:
+  sequence:
+    - service: shell_command.thomas_camera_floor
+
+camera_thomas_door:
+  sequence:
+    - service: shell_command.thomas_camera_door
+
+hall_camera_enable_detection:
+  sequence:
+    - service: shell_command.hall_camera_enable_detection
+
+hall_camera_disable_detection:
+  sequence:
+    - service: shell_command.hall_camera_disable_detection

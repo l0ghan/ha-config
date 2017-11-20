@@ -7,12 +7,16 @@ default_view:
     - group.motion
     - group.weather
 
-
 cameras:
   view: yes
   icon: mdi:cctv
   entities:
-    - group.all_cameras
+    - group.camera_hall
+    - group.camera_landing
+    - group.camera_drive
+    - group.camera_garden
+    - group.camera_thomas
+    - group.camera_controls
 
 rooms:
   view: yes
@@ -31,13 +35,33 @@ network:
     - group.links
     - group.pihole_stats
 
-all_cameras:
+camera_thomas:
   entities:
     - camera.thomas
+
+camera_hall:
+  entities:
     - camera.hall
+
+camera_landing:
+  entities:
     - camera.landing
+
+camera_drive:
+  entities:
     - camera.drive
+
+camera_garden:
+  entities:
     - camera.garden
+
+camera_controls:
+  entities:
+    - script.hall_camera_disable_detection
+    - script.hall_camera_enable_detection
+    - script.camera_thomas_bed
+    - script.camera_thomas_door
+    - script.camera_thomas_floor
 
 all_motion_sensors:
   entities:
