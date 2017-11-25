@@ -25,7 +25,10 @@
           states:
             - state: 'off'
               class: 'invisible'
-              
+          action:
+            domain: media_player
+            service: media_play_pause
+
         - name: Motion
           entities:
             - binary_sensor.thomas_sensor

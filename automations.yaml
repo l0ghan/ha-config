@@ -88,3 +88,16 @@
   - entity_id: group.family
     platform: state
     to: not_home
+
+- alias: Notify low battery
+  trigger:
+    platform: numeric_state
+    entity_id:
+    - sensor.gregs_ipad_battery_level
+    - sensor.gregs_iphone_8_battery_level
+    - sensor.lynette_iphone_battery_level
+    below: 20
+  action:
+    - service: notify.ios_gregs_iphone_8
+      data_template: 
+        message: "{{ trigger.to_state.attributes.friendly_name }}'s is less than: 20%"
