@@ -46,6 +46,9 @@ recorder:
       - group.all_switches
       - sensor.pihole_ads_percentage_today
       - group.all_motion_sensors
+      - group.pihole_stats
+      - sensor.lights_on_count
+      - automation.turn_on_office_lights_on_motion
 
 updater:
 group: !include groups.yaml
@@ -104,8 +107,32 @@ switch:
         value_template: "{{ value_json.status == 'enabled' }}"
 
 binary_sensor:
-  - platform: workday
-    country: England
+  - platform: command_line
+    name: hall_motion
+    command:  !secret get_hall_motion_status
+    value_template: >-
+      {%- if value == "2" -%}
+        motion
+      {%- else -%}
+        none
+      {%- endif -%}
+    payload_on: motion
+    payload_off: none
+    device_class: motion
+    scan_interval: 5
+  - platform: command_line
+    name: landing_motion
+    command:  !secret get_landing_motion_status
+    value_template: >-
+      {%- if value == "2" -%}
+        motion
+      {%- else -%}
+        none
+      {%- endif -%}
+    payload_on: motion
+    payload_off: none
+    device_class: motion
+    scan_interval: 5
 
 input_boolean:
   enable_security:

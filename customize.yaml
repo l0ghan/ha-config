@@ -50,6 +50,7 @@ sensor.lynette_iphone_battery_state:
 sensor.office_motion_temperature:
   friendly_name: Office Temperature
 binary_sensor.office_motion_sensor:
+  device_class: motion
   friendly_name: Office
 group.office:
   friendly_name: Office
@@ -78,6 +79,7 @@ sensor.thomas_luminance:
   friendly_name: Thomas' Room Brightness
   homebridge_hidden: true
 binary_sensor.thomas_sensor:
+  device_class: motion
   friendly_name: Thomas' Room
   group:
     group.thomas:
@@ -185,3 +187,9 @@ sensor.lights_on_count:
   state_card_mode: badges
 group.camera_controls:
   friendly_name: Camera Controls
+binary_sensor.hall_motion:
+  friendly_name: Hall
+  show_last_changed: true
+binary_sensor.landing_motion:
+  friendly_name: Landing
+  show_last_changed: true

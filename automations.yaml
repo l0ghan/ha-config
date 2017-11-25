@@ -48,48 +48,52 @@
   - above: '75'
     entity_id: sensor.disk_used_
     platform: numeric_state
-- action:
-  - data:
-      title: House is empty. Enabling motion sensors...
-    service: notify.ios_gregs_iphone_8
-  alias: Alert when house becomes empty
+- alias: Alert when house becomes empty
+  action:
+  - service: notify.ios_gregs_iphone_8
+    data_template:
+      message: House is now empty. Enabling motion sensor alerts...
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.enable_security
   condition: []
   id: '1510432731633'
   trigger:
   - entity_id: group.family
     platform: state
     to: not_home
-- action:
-  - data:
-      message: A motion alert has been tripped in the house
-      title: Motion alert!
-    service: notify.ios_gregs_iphone_8
-  alias: Alert on motion if house is empty
-  condition:
-  - condition: state
-    entity_id: input_boolean.enable_security
-    state: 'on'
-  - condition: state
-    entity_id: group.family
-    state: not_home
-  id: '1510437227399'
+- alias: Motion alert
   trigger:
   - entity_id: group.all_motion_sensors
     platform: state
     to: 'on'
-- action:
-  - service: shell_command.hall_camera_enable_detection
-  - data: {}
-    service: shell_command.landing_camera_enable_detection
-  alias: Enable camera recording when house is empty
-  condition: []
-  id: '1511218490670'
+  action:
+  - data:
+      message: A motion sensor has been tripped in the house
+      title: Motion alert
+    service: notify.ios_gregs_iphone_8
+  id: '1510437227399'
+  condition:
+  - condition: state
+    entity_id: group.family
+    state: not_home
+- alias: Enable internal camera recording
   trigger:
-  - entity_id: group.family
-    platform: state
+  - platform: state
+    entity_id: group.family
     to: not_home
-
-- alias: Notify low battery
+  action:
+  - service: shell_command.landing_camera_enable_detection
+  id: '1511218490670'
+- alias: Disable internal camera recording
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: home
+  action:
+  - service: shell_command.landing_camera_disable_detection
+  id: '1511218494340'
+- alias: Low battery alert
   trigger:
     platform: numeric_state
     entity_id:
@@ -98,6 +102,6 @@
     - sensor.lynette_iphone_battery_level
     below: 20
   action:
-    - service: notify.ios_gregs_iphone_8
-      data_template: 
-        message: "{{ trigger.to_state.attributes.friendly_name }}'s is less than: 20%"
+  - service: notify.ios_gregs_iphone_8
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }}''s is less than: 20%'
