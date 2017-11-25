@@ -68,3 +68,7 @@
             - camera.garden
             - camera.hall
             - camera.landing
+
+        - name: Lights count
+          entities:
+            - sensor.lights_on_count

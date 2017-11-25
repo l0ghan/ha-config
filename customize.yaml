@@ -12,10 +12,13 @@ sensor.desk_lights_previous_reading:
 sensor.desk_lights_voltage:
   hidden: true
 switch.desk_lights_switch:
-  friendly_name: Light
-  group:
   default_view:
     friendly_name: Office
+  group:
+    group.office:
+      friendly_name: Light
+  friendly_name: Office
+  icon: mdi:lightbulb
 zwave.aeotec_zw090_zstick_gen5_eu:
   hidden: true
 zwave.thomas:
@@ -176,3 +179,9 @@ light.dining_room:
   state_card_mode: break-slider-toggle
 group.load:
   state_card_mode: badges
+sensor.gregs_ipad_battery_state:
+  hidden: true
+sensor.lights_on_count:
+  state_card_mode: badges
+group.camera_controls:
+  friendly_name: Camera Controls

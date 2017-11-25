@@ -61,16 +61,16 @@
         {% else %}
           mdi:battery-alert
         {% endif %}
-    template_last_motion:
-      friendly_name: 'Last Motion'
+    lights_on_count:
+      friendly_name: 'Lights On'
       value_template: >
-        {%- set sensors = [states.binary_sensor.office_motion_sensor, states.binary_sensor.thomas_sensor] %}
-        {% for sensor in sensors %}
-          {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
-            {{ sensor.name }}
-          {% endif %}
-        {% endfor %}
+        {%- set lights = [states.light.dining_room, states.light.bedroom, states.switch.desk_lights_switch] %}
 
+        {% for l in lights  if l.state == 'on' -%}
+          {% if loop.first %}
+            {{loop.length}}
+            {% endif %}
+        {% endfor %}
 
 - platform: pi_hole
   monitored_conditions:

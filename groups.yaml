@@ -92,6 +92,7 @@ lights:
     - light.bedroom
     - light.dining_room
     - switch.desk_lights_switch
+    - sensor.lights_on_count
 
 bedroom:
   entities:
@@ -106,6 +107,7 @@ diningroom:
 batteries:
   entities:
     - sensor.gregs_iphone_8_battery_level
+    - sensor.gregs_ipad_battery_level
     - sensor.lynette_iphone_battery_level
     - sensor.tradfri_remote_control
     - sensor.tradfri_remote_control_2
@@ -122,19 +124,20 @@ thomas:
     - binary_sensor.thomas_sensor
     - sensor.thomas_temperature
     - sensor.thomas_luminance
-    
+
 office:
   entities:
     - switch.desk_lights_switch
+    - switch.wake_on_lan
     - binary_sensor.office_motion_sensor
     - sensor.office_motion_temperature
     - sensor.office_motion_luminance
-    
+
 family:
   entities:
     - device_tracker.gregs_iphone_8
     - device_tracker.lynette_iphone
-    
+
 pi_status:
   name: Server Status
   entities:
@@ -152,7 +155,6 @@ load:
     - sensor.average_load_1m
     - sensor.average_load_5m
     - sensor.average_load_15m
-
 
 pihole_stats:
   name: PiHole Stats

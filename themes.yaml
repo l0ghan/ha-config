@@ -2,7 +2,7 @@ midnight:
   # Main colors
   primary-color: '#c94426'                                                        # Header
   accent-color: '#ce654e'                                                         # Accent color
-  dark-primary-color: 'var(--accent-color)'                                       # Hyperlinks                                         
+  dark-primary-color: 'var(--accent-color)'                                       # Hyperlinks
   light-primary-color: 'var(--accent-color)'                                      # Horizontal line in about
                                                                               
   # Text colors                                                                  
@@ -10,12 +10,12 @@ midnight:
   text-primary-color: 'var(--primary-text-color)'                                 # Primary text colour
   secondary-text-color: '#d83838'                                                 # For secondary titles in more info boxes etc.
   disabled-text-color: '#7F848E'                                                  # Disabled text colour
-  label-badge-border-color: 'green'                                               # Label badge border, just a reference value   
+  label-badge-border-color: 'green'                                               # Label badge border, just a reference value
 
   # Background colors                                                            
   primary-background-color: '#332a29'                                             # Settings background
-  secondary-background-color: '#332a29'                                           # Main card UI background  
-  divider-color: 'rgba(0, 0, 0, .12)'                                             # Divider 
+  secondary-background-color: '#332a29'                                           # Main card UI background
+  divider-color: 'rgba(0, 0, 0, .12)'                                             # Divider
     
   # Table rows                                                                   
   table-row-background-color: '#353840'                                           # Table row
@@ -34,7 +34,7 @@ midnight:
   paper-item-icon-color: 'var(--primary-text-color)'                              # Icon color
   paper-item-icon-active-color: '#F9C536'                                         # Icon color active
   paper-item-icon_-_color: 'green'           
-  paper-item-selected_-_background-color: '#434954'                               # Popup item select                      
+  paper-item-selected_-_background-color: '#434954'                               # Popup item select
   paper-tabs-selection-bar-color: 'green'
 
   # Labels 
