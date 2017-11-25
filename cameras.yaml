@@ -31,4 +31,3 @@
   port: 88
   username: greg
   password: !secret api_password2
-

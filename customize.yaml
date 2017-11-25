@@ -12,7 +12,10 @@ sensor.desk_lights_previous_reading:
 sensor.desk_lights_voltage:
   hidden: true
 switch.desk_lights_switch:
-  friendly_name: Office
+  friendly_name: Light
+  group:
+  default_view:
+    friendly_name: Office
 zwave.aeotec_zw090_zstick_gen5_eu:
   hidden: true
 zwave.thomas:
@@ -34,9 +37,9 @@ sensor.thomas_seismic_intensity:
 sensor.thomas_sourcenodeid:
   hidden: true
 sensor.dark_sky_apparent_temperature:
-  friendly_name: Outside Temperature
+  friendly_name: Temperature
 sensor.dark_sky_summary:
-  friendly_name: Weather Summary
+  friendly_name: Weather
 sensor.gregs_iphone_8_battery_state:
   hidden: true
 sensor.lynette_iphone_battery_state:
@@ -44,7 +47,7 @@ sensor.lynette_iphone_battery_state:
 sensor.office_motion_temperature:
   friendly_name: Office Temperature
 binary_sensor.office_motion_sensor:
-  friendly_name: Office Motion
+  friendly_name: Office
 group.office:
   friendly_name: Office
 group.batteries:
@@ -58,8 +61,10 @@ sensor.office_motion_luminance:
   friendly_name: Office Brightness
 device_tracker.lynette_iphone:
   friendly_name: Lynette
+  show_last_changed: true
 device_tracker.gregs_iphone_8:
   friendly_name: Greg
+  show_last_changed: true
 group.family:
   friendly_name: Family
 binary_sensor.sensor:
@@ -70,7 +75,10 @@ sensor.thomas_luminance:
   friendly_name: Thomas' Room Brightness
   homebridge_hidden: true
 binary_sensor.thomas_sensor:
-  friendly_name: Thomas' Room Motion
+  friendly_name: Thomas' Room
+  group:
+    group.thomas:
+      friendly_name: Motion
 sensor.thomas_temperature:
   friendly_name: Thomas' Room Temperature
 sensor.process_openvpn:
@@ -124,8 +132,10 @@ input_boolean.enable_security:
   icon: mdi:shield-half-full
 sensor.fibaro_office_battery_level:
   friendly_name: Office Fibaro
+  show_last_changed: true
 sensor.fibaro_thomas_battery_level:
   friendly_name: Thomas' Fibaro
+  show_last_changed: true
 switch.pihole:
   friendly_name: Pi-Hole Enabled
 group.pihole_stats:
@@ -152,3 +162,17 @@ script.camera_thomas_door:
 script.camera_thomas_floor:
   friendly_name: Face floor
   icon: mdi:arrow-collapse-down
+sensor.gregs_iphone_8_battery_level:
+  show_last_changed: true
+sensor.lynette_iphone_battery_level:
+  show_last_changed: true
+sensor.tradfri_remote_control:
+  show_last_changed: true
+sensor.tradfri_remote_control_2:
+  show_last_changed: true
+light.bedroom:
+  state_card_mode: break-slider-toggle
+light.dining_room:
+  state_card_mode: break-slider-toggle
+group.load:
+  state_card_mode: badges

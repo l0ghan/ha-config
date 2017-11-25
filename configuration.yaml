@@ -6,11 +6,34 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/London
   customize: !include customize.yaml
+  customize_glob:
+    "*.*":
+      custom_ui_state_card: state-card-custom-ui
+    sensor.thomas_temperature:
+      group:
+        group.thomas:
+          friendly_name: 'Temperature'
+    binary_sensor.thomas_sensor:
+      show_last_changed: true
+      group:
+        group.thomas:
+          friendly_name: 'Motion'
+    binary_sensor.office_motion_sensor:
+      show_last_changed: true
+    sensor.thomas_luminance:
+      group:
+        group.thomas:
+          friendly_name: 'Brightness'
+    sensor.office_motion_temperature:
+      group:
+        group.office:
+          friendly_name: 'Temperature'
 
 frontend:
   themes: !include themes.yaml
   extra_html_url:
     - /local/custom_ui/state-card-floorplan.html
+    - /local/custom_ui/state-card-custom-ui.html
 
 config:
 http:
@@ -20,7 +43,9 @@ http:
   ssl_key: !secret ssl_key
   ip_ban_enabled: True
   login_attempts_threshold: 3
-
+recorder:
+  purge_interval: 1
+  purge_keep_days: 7
 updater:
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -35,6 +35,11 @@ network:
     - group.links
     - group.pihole_stats
 
+automation:
+  view: yes
+  entities:
+    - group.all_automations
+
 camera_thomas:
   entities:
     - camera.thomas
@@ -121,8 +126,8 @@ thomas:
 office:
   entities:
     - switch.desk_lights_switch
-    - sensor.office_motion_temperature
     - binary_sensor.office_motion_sensor
+    - sensor.office_motion_temperature
     - sensor.office_motion_luminance
     
 family:
@@ -134,14 +139,20 @@ pi_status:
   name: Server Status
   entities:
     - sensor.since_last_boot
-    - sensor.average_load_1m
-    - sensor.average_load_5m
-    - sensor.average_load_15m
     - sensor.ram_used
     - sensor.disk_used_
     - sensor.disk_used_mnt
     - sensor.speedtest_download
     - sensor.last_backup
+    - group.load
+
+load:
+  name: Load
+  entities:
+    - sensor.average_load_1m
+    - sensor.average_load_5m
+    - sensor.average_load_15m
+
 
 pihole_stats:
   name: PiHole Stats
