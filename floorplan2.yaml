@@ -33,6 +33,8 @@
           entities:
             - binary_sensor.thomas_sensor
             - binary_sensor.office_motion_sensor
+            - binary_sensor.landing_motion
+            - binary_sensor.hall_motion
           states:
             - state: 'on'
               class: 'danger-background'
