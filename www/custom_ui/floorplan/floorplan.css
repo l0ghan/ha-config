@@ -57,3 +57,11 @@ svg, svg * {
 .light-on {
   fill: rgb(239, 248, 185) !important;
 }
+
+.device-home {
+  fill: #acc681 !important;
+}
+
+.device-away {
+  fill: #c95454 !important;
+}

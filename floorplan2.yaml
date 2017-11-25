@@ -13,12 +13,12 @@
           entities:
             - device_tracker.lynette_iphone
             - device_tracker.gregs_iphone_8
-          states:
-            - state: 'not_home'
-              class: 'transparent'
-            - state: 'SEL'
-              class: 'transparent'
-
+          class_template: '
+          if (entity.state == "home")
+            return "device-home";
+          else
+            return "device-away";
+          '
         - name: Media Players
           entities:
             - media_player.bedroom
@@ -39,13 +39,12 @@
         - name: Weather Temperature
           entities:
              - sensor.dark_sky_apparent_temperature
-          #text_template: '${entity.state ? entity.state : "unknown"}'
-          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
           text_template: '${entity.state} °c'
           
-        - name: Weather Summary
+        - name: Sensors
           entities:
             - sensor.dark_sky_summary
+            - sensor.lights_on_count
 
         - name: Lights
           entities:
@@ -68,7 +67,3 @@
             - camera.garden
             - camera.hall
             - camera.landing
-
-        - name: Lights count
-          entities:
-            - sensor.lights_on_count
