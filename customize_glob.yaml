@@ -1,0 +1,22 @@
+
+"*.*":
+    custom_ui_state_card: state-card-custom-ui
+sensor.thomas_temperature:
+    group:
+    group.thomas:
+        friendly_name: 'Temperature'
+binary_sensor.thomas_sensor:
+    show_last_changed: true
+    group:
+    group.thomas:
+        friendly_name: 'Motion'
+binary_sensor.office_motion_sensor:
+    show_last_changed: true
+sensor.thomas_luminance:
+    group:
+    group.thomas:
+        friendly_name: 'Brightness'
+sensor.office_motion_temperature:
+    group:
+    group.office:
+        friendly_name: 'Temperature'

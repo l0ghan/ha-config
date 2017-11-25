@@ -6,28 +6,7 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/London
   customize: !include customize.yaml
-  customize_glob:
-    "*.*":
-      custom_ui_state_card: state-card-custom-ui
-    sensor.thomas_temperature:
-      group:
-        group.thomas:
-          friendly_name: 'Temperature'
-    binary_sensor.thomas_sensor:
-      show_last_changed: true
-      group:
-        group.thomas:
-          friendly_name: 'Motion'
-    binary_sensor.office_motion_sensor:
-      show_last_changed: true
-    sensor.thomas_luminance:
-      group:
-        group.thomas:
-          friendly_name: 'Brightness'
-    sensor.office_motion_temperature:
-      group:
-        group.office:
-          friendly_name: 'Temperature'
+  customize_glob: !include customize_glob.yaml
 
 frontend:
   themes: !include themes.yaml
@@ -123,6 +102,10 @@ switch:
         command_off: "curl -X GET 'http://192.168.1.65/admin/api.php?disable=3600&auth='"
         command_state: "curl -X GET 'http://192.168.1.65/admin/api.php?status'"
         value_template: "{{ value_json.status == 'enabled' }}"
+
+binary_sensor:
+  - platform: workday
+    country: England
 
 input_boolean:
   enable_security:
