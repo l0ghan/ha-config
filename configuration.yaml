@@ -43,6 +43,8 @@ http:
   ssl_key: !secret ssl_key
   ip_ban_enabled: True
   login_attempts_threshold: 3
+mqtt:
+  broker: localhost
 recorder:
   purge_interval: 1
   purge_keep_days: 7
