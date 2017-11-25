@@ -6,3 +6,4 @@ www/custom_ui/state-card-custom-ui.html.html
 custom_compnents/customizer/*
 www/custom_ui/state-card-custom-ui.html
 custom_components/customizer/__init__.py
+update.sh
