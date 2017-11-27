@@ -193,3 +193,5 @@ binary_sensor.hall_motion:
 binary_sensor.landing_motion:
   friendly_name: Landing
   show_last_changed: true
+sensor.gregs_ipad_battery_level:
+  show_last_changed: true

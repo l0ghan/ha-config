@@ -38,7 +38,13 @@ network:
 automation:
   view: yes
   entities:
-    - group.all_automations
+    - automation.alert_when_house_becomes_empty
+    - automation.low_battery_alert
+    - automation.low_outside_temperature
+    - automation.motion_alert
+    - automation.turn_off_office_lights_when_there_is_no_longer_any_motion
+    - automation.turn_on_dining_room_light_when_someone_comes_home
+    - automation.turn_on_office_lights_on_motion
 
 camera_thomas:
   entities:
@@ -132,6 +138,7 @@ thomas:
 office:
   entities:
     - switch.desk_lights_switch
+    - switch.led
     - switch.wake_on_lan
     - binary_sensor.office_motion_sensor
     - sensor.office_motion_temperature

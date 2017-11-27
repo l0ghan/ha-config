@@ -30,3 +30,47 @@ landing_camera_enable_detection:
 landing_camera_disable_detection:
   sequence:
     - service: shell_command.landing_camera_disable_detection
+
+notify_of_low_temp:
+  sequence:
+  - service: notify.ios_gregs_iphone_8
+    data_template:
+      title: 'Temperature Warning'
+      message: 'Outside temperature is below 0c ({{ states.sensor.dark_sky_apparent_temperature.state }}{{ states.sensor.dark_sky_apparent_temperature.attributes.unit_of_measurement }})'
+  - service: notify.ios_lynette_iphone
+    data_template:
+      title: 'Temperature Warning'
+      message: 'Outside temperature is below 0c ({{ states.sensor.dark_sky_apparent_temperature.state }}{{ states.sensor.dark_sky_apparent_temperature.attributes.unit_of_measurement  }})'
+
+notify_on_motion_alert:
+  sequence:
+  - service: notify.slack
+    data_template:
+      message: ":warning: There has been a motion alert in the house. Here's the current status..."
+      target: "#home"
+      data:
+        attachments:
+        - color: "#FCD116"
+          fields:
+          - title: Hall
+            value: "{{ states('binary_sensor.hall_motion') }}"
+            short: true
+          - title: Landing
+            value: "{{ states('binary_sensor.landing_motion') }}"
+            short: true
+          - title: Office
+            value: "{{ states('binary_sensor.office_motion_sensor') }}"
+            short: true
+          - title: Thomas
+            value: "{{ states('binary_sensor.thomas_sensor') }}"
+            short: true
+
+enable_camera_detection:
+  sequence:
+  - service: script.hall_camera_enable_detection
+  - service: script.landing_camera_enable_detection
+
+disable_camera_detection:
+  sequence:
+  - service: script.hall_camera_disable_detection
+  - service: script.landing_camera_disable_detection

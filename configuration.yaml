@@ -24,17 +24,26 @@ http:
   login_attempts_threshold: 3
 mqtt:
   broker: localhost
+notify:
+  - name: slack
+    platform: slack
+    api_key: !secret slack_api_key
+    default_channel: '#home'
 recorder:
   purge_interval: 1
   purge_keep_days: 7
   exclude:
     entities:
+      - sensor.average_load_1m
+      - sensor.average_load_5m
+      - sensor.average_load_15m
       - sensor.since_last_boot
       - sensor.ram_used
       - sensor.disk_used_
       - sensor.disk_used_mnt
       - sensor.speedtest_download
       - sensor.last_backup
+      - sensor.desk_lights_energy
       - sun.sun
       - camera.drive
       - camera.hall
@@ -47,6 +56,8 @@ recorder:
       - sensor.pihole_ads_percentage_today
       - group.all_motion_sensors
       - group.pihole_stats
+      - sensor.pihole_ads_percentage_blocked_today
+      - sensor.pihole_ads_blocked_today
       - sensor.lights_on_count
       - automation.turn_on_office_lights_on_motion
 
@@ -101,10 +112,14 @@ switch:
   - platform: command_line
     switches:
       pihole:
-        command_on: "curl -X GET 'http://192.168.1.65/admin/api.php?enable&auth='"
-        command_off: "curl -X GET 'http://192.168.1.65/admin/api.php?disable=3600&auth='"
-        command_state: "curl -X GET 'http://192.168.1.65/admin/api.php?status'"
+        command_on: "curl --silent 'http://192.168.1.65/admin/api.php?enable&auth='"
+        command_off: "curl --silent 'http://192.168.1.65/admin/api.php?disable=3600&auth='"
+        command_state: "curl -X --silent 'http://192.168.1.65/admin/api.php?status'"
         value_template: "{{ value_json.status == 'enabled' }}"
+      led:
+        command_on: "curl --silent http://192.168.1.116/led/toggle"
+        command_off: "curl --silent http://192.168.1.116/led/toggle"
+        command_state: "curl --silent http://192.168.1.116/led/state"
 
 binary_sensor:
   - platform: command_line

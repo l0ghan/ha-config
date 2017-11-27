@@ -1,98 +1,64 @@
-- action:
-  - data:
-      entity_id: switch.desk_lights_switch
-    service: switch.turn_on
-  alias: Turn on office lights on motion
-  condition: []
-  id: '1510272913093'
+- alias: Turn on office lights on motion
   trigger:
   - entity_id: binary_sensor.office_motion_sensor
     platform: state
     to: 'on'
-- action:
+  action:
   - data:
       entity_id: switch.desk_lights_switch
-    service: switch.turn_off
-  alias: Turn off office lights when there is no longer any motion
-  condition: []
-  id: '1510273028657'
+    service: switch.turn_on
+
+- alias: Turn off office lights when there is no longer any motion
   trigger:
-  - entity_id: binary_sensor.office_motion_sensor
+  - platform: state
+    entity_id: binary_sensor.office_motion_sensor
     for:
       minutes: 10
-    platform: state
     to: 'off'
-- action:
-  - data:
-      entity_id: light.dining_room
-    service: light.turn_on
-  alias: Turn on dining room light when someone comes home
-  condition:
-  - after: sunset
-    after_offset: -02:00:00
-    condition: sun
-  id: '1510348109231'
+  action:
+  - service: switch.turn_off
+    data:
+        entity_id: switch.desk_lights_switch
+
+- alias: Turn on dining room light when someone comes home
   trigger:
   - entity_id: group.family
     platform: state
     to: home
-- action:
-  - data:
-      message: High disk usage on /
-      title: Alert
-    service: notify.ios_gregs_iphone_8
-  alias: Notify me when disk is getting full
-  condition: []
-  id: '1510357259596'
-  trigger:
-  - above: '75'
-    entity_id: sensor.disk_used_
-    platform: numeric_state
-- alias: Alert when house becomes empty
+  condition:
+  - after: sunset
+    after_offset: -02:00:00
+    condition: sun
   action:
-  - service: notify.ios_gregs_iphone_8
-    data_template:
-      message: House is now empty. Enabling motion sensor alerts...
-  - service: input_boolean.turn_on
-    data:
-      entity_id: input_boolean.enable_security
-  condition: []
-  id: '1510432731633'
+    - data:
+        entity_id: light.dining_room
+      service: light.turn_on
+
+- alias: Alert when house becomes empty
   trigger:
   - entity_id: group.family
     platform: state
     to: not_home
+  action:
+  - service: notify.slack
+    data:
+      message: ":information_source: House is now empty. Enabling motion sensor alerts..."
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.enable_security
+
 - alias: Motion alert
   trigger:
   - entity_id: group.all_motion_sensors
     platform: state
     to: 'on'
-  action:
-  - data:
-      message: A motion sensor has been tripped in the house
-      title: Motion alert
-    service: notify.ios_gregs_iphone_8
-  id: '1510437227399'
   condition:
   - condition: state
-    entity_id: group.family
-    state: not_home
-- alias: Enable internal camera recording
-  trigger:
-  - platform: state
-    entity_id: group.family
-    to: not_home
+    entity_id: input_boolean.enable_security
+    state: 'on'
   action:
-  - service: shell_command.landing_camera_enable_detection
-  id: '1511218490670'
-- alias: Disable internal camera recording
-  trigger:
-  - platform: state
-    entity_id: group.family
-    to: home
-  action:
-  - service: shell_command.landing_camera_disable_detection
-  id: '1511218494340'
+  - service: script.notify_on_motion_alert
+
 - alias: Low battery alert
   trigger:
     platform: numeric_state
@@ -102,6 +68,39 @@
     - sensor.lynette_iphone_battery_level
     below: 20
   action:
-  - service: notify.ios_gregs_iphone_8
+  - service: notify.slack
     data_template:
       message: '{{ trigger.to_state.attributes.friendly_name }}''s is less than: 20%'
+
+- alias: Low outside temperature
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dark_sky_apparent_temperature
+    below: 0
+  action:
+  - service: script.notify_of_low_temp
+
+- alias: Update notifications
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.slack
+    data:
+      message: 'There is a new Home Assistant release available.'
+
+- alias: Enable internal camera recording
+  trigger:
+    - platform: state
+      entity_id: input_boolean.enable_security
+      to: 'on'
+  action:
+  - service: script.enable_camera_detection
+
+- alias: Disable internal camera recording
+  trigger:
+    - platform: state
+      entity_id: input_boolean.enable_security
+      to: 'off'
+  action:
+  - service: script.disable_camera_detection
