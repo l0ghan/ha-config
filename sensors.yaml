@@ -66,10 +66,10 @@
       value_template: >
         {%- set lights = [states.light.dining_room, states.light.bedroom, states.switch.desk_lights_switch] %}
 
-        {% for l in lights  if l.state == 'on' -%}
-          {% if loop.first %}
-            {{loop.length}}
-            {% endif %}
+        {% for state in lights if state.state == 'on' %}
+          {% if loop.last %}
+            {{loop.index}} 
+          {% endif %}
         {% endfor %}
 
 - platform: pi_hole
@@ -81,3 +81,4 @@
 - platform: command_line
   name: Last Backup
   command: "cat /home/homeassistant/.homeassistant/lastbackup.txt"
+  
