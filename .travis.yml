@@ -1,7 +1,7 @@
 language: python
- notifications:
-    slack: gstevenson:CI3OzKB01Tgfkut0TS5g5Udc
-    email: false
+notifications:
+  slack: gstevenson:CI3OzKB01Tgfkut0TS5g5Udc
+  email: false
 python:
   - "3.5"
 before_install:
