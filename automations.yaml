@@ -20,7 +20,7 @@
     data:
         entity_id: switch.desk_lights_switch
 
-- alias: Turn on dining room light when someone comes home
+- alias: Turn on dining room light and disable alerts when someone comes home
   trigger:
   - entity_id: group.family
     platform: state
@@ -30,11 +30,11 @@
     after_offset: -02:00:00
     condition: sun
   action:
-    - data:
+    - service: light.turn_on
+      data:
         entity_id: light.dining_room
-      service: light.turn_on
 
-- alias: Alert when house becomes empty
+- alias: Enable security and send when house becomes empty
   trigger:
   - entity_id: group.family
     platform: state
@@ -44,6 +44,16 @@
     data:
       message: ":information_source: House is now empty. Enabling motion sensor alerts..."
   - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.enable_security
+
+- alias: Disable security when house is no longer empty
+  trigger:
+  - entity_id: group.family
+    platform: state
+    to: not_home
+  action:
+  - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.enable_security
 

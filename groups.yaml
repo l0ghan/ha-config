@@ -38,13 +38,17 @@ network:
 automation:
   view: yes
   entities:
-    - automation.alert_when_house_becomes_empty
+    - automation.disable_internal_camera_recording
+    - automation.disable_security_when_house_is_no_longer_empty
+    - automation.enable_internal_camera_recording
+    - automation.enable_security_and_send_when_house_becomes_empty
     - automation.low_battery_alert
     - automation.low_outside_temperature
     - automation.motion_alert
     - automation.turn_off_office_lights_when_there_is_no_longer_any_motion
-    - automation.turn_on_dining_room_light_when_someone_comes_home
+    - automation.turn_on_dining_room_light_and_disable_alerts_when_someone_comes_home
     - automation.turn_on_office_lights_on_motion
+    - automation.update_notifications
 
 camera_thomas:
   entities:
