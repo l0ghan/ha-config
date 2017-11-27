@@ -5,4 +5,4 @@ Auto generates the 'automation' tab
   entities:
 {% for state in states.group.all_automations.attributes.entity_id   %}
     - {{ state }}
-{% endfor %}```
+{% endfor %}
