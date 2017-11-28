@@ -32,7 +32,7 @@
         - name: Motion
           entities:
             - binary_sensor.thomas_sensor
-            - binary_sensor.office_motion_sensor
+            - binary_sensor.office_sensor
             - binary_sensor.landing_motion
             - binary_sensor.hall_motion
           states:

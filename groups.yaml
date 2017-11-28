@@ -79,7 +79,7 @@ camera_controls:
 all_motion_sensors:
   entities:
     - binary_sensor.thomas_sensor
-    - binary_sensor.office_motion_sensor
+    - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
 
@@ -97,7 +97,7 @@ motion:
   entities:
     - input_boolean.enable_security
     - binary_sensor.thomas_sensor
-    - binary_sensor.office_motion_sensor
+    - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
 
@@ -144,9 +144,9 @@ office:
     - switch.desk_lights_switch
     - switch.led
     - switch.wake_on_lan
-    - binary_sensor.office_motion_sensor
-    - sensor.office_motion_temperature
-    - sensor.office_motion_luminance
+    - binary_sensor.office_sensor
+    - sensor.office_temperature
+    - sensor.office_luminance
 
 family:
   entities:

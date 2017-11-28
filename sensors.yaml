@@ -37,9 +37,9 @@
   sensors:
     fibaro_office_battery_level:
       unit_of_measurement: '%'
-      value_template: "{{ states.zwave.office_motion.attributes.battery_level | default(0) | int }}"
+      value_template: "{{ states.zwave.office.attributes.battery_level | default(0) | int }}"
       icon_template: >
-        {% set battery_level = states.zwave.office_motion.attributes.battery_level | default(0) | int %}
+        {% set battery_level = states.zwave.office.attributes.battery_level | default(0) | int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}
         {% if battery_round >= 100 %}
           mdi:battery

@@ -23,7 +23,7 @@ zwave.aeotec_zw090_zstick_gen5_eu:
   hidden: true
 zwave.thomas:
   hidden: true
-zwave.office_motion:
+zwave.office:
   hidden: true
 zwave.desk_lights:
   hidden: true
@@ -47,9 +47,9 @@ sensor.gregs_iphone_8_battery_state:
   hidden: true
 sensor.lynette_iphone_battery_state:
   hidden: true
-sensor.office_motion_temperature:
+sensor.office_temperature:
   friendly_name: Office Temperature
-binary_sensor.office_motion_sensor:
+binary_sensor.office_sensor:
   device_class: motion
   friendly_name: Office
 group.office:
@@ -59,9 +59,9 @@ group.batteries:
 group.weather:
   friendly_name: Weather
   homebridge_hidden: true
-sensor.office_motion_general:
+sensor.office_general:
   hidden: true
-sensor.office_motion_luminance:
+sensor.office_luminance:
   friendly_name: Office Brightness
 device_tracker.lynette_iphone:
   friendly_name: Lynette
@@ -71,8 +71,6 @@ device_tracker.gregs_iphone_8:
   show_last_changed: true
 group.family:
   friendly_name: Family
-binary_sensor.sensor:
-  friendly_name: Thomas' Room Motion
 group.thomas:
   friendly_name: Thomas
 sensor.thomas_luminance:

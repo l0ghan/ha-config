@@ -1485,8 +1485,8 @@
      transform="matrix(0,-1,-1,0,0,0)"
      inkscape:label="KitchenDoor" />
   <g
-     id="binary_sensor.office_motion_sensor"
-     inkscape:label="binary_sensor.office_motion_sensor"
+     id="binary_sensor.office_sensor"
+     inkscape:label="binary_sensor.office_sensor"
      style="fill:#ec1a1a;fill-opacity:0;stroke:#e98e88;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:2, 1;stroke-dashoffset:0;stroke-opacity:1">
     <path
        inkscape:connector-curvature="0"

@@ -10,13 +10,13 @@ binary_sensor.thomas_sensor:
     group:
     group.thomas:
         friendly_name: 'Motion'
-binary_sensor.office_motion_sensor:
+binary_sensor.office_sensor:
     show_last_changed: true
 sensor.thomas_luminance:
     group:
     group.thomas:
         friendly_name: 'Brightness'
-sensor.office_motion_temperature:
+sensor.office_temperature:
     group:
     group.office:
         friendly_name: 'Temperature'

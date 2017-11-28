@@ -521,12 +521,12 @@
   </g>
   <rect
      style="fill:#ec1a1a;fill-opacity:0;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="binary_sensor.office_motion_sensor"
+     id="binary_sensor.office_sensor"
      width="162.34538"
      height="114.30459"
      x="229.72919"
      y="1040.6532"
-     inkscape:label="binary_sensor.office_motion_sensor" />
+     inkscape:label="binary_sensor.offic_sensor" />
   <rect
      style="fill:#80610f;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4927"

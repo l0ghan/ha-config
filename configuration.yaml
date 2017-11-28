@@ -50,7 +50,7 @@ recorder:
       - camera.landing
       - camera.garden
       - camera.thomas
-      - zwave.office_motion
+      - zwave.office
       - zwave.desk_lights
       - group.all_switches
       - sensor.pihole_ads_percentage_today

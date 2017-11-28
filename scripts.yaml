@@ -59,7 +59,7 @@ notify_on_motion_alert:
             value: "{{ states('binary_sensor.landing_motion') }}"
             short: true
           - title: Office
-            value: "{{ states('binary_sensor.office_motion_sensor') }}"
+            value: "{{ states('binary_sensor.office_sensor') }}"
             short: true
           - title: Thomas
             value: "{{ states('binary_sensor.thomas_sensor') }}"
