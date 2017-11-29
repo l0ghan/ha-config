@@ -114,3 +114,21 @@
       to: 'off'
   action:
   - service: script.disable_camera_detection
+
+- alias: Turn on electric blanket
+  trigger:
+    - platform: time
+      at: '18:30:00'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.electric_blanket
+
+- alias: Turn off electric blanket
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.electric_blanket
