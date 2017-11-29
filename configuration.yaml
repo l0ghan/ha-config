@@ -100,10 +100,16 @@ zone:
     latitude: 53.201563
     longitude: -0.590652
     icon: mdi:laptop-mac
+  - name: Saxilby School
+    latitude: 53.268870
+    longitude: -0.657313
+    icon: mdi:school
 
 shell_command: !include shell_commands.yaml
 
 switch:
+  - platform: tplink
+    host: 192.168.1.117
   - platform: wake_on_lan
     mac_address: 40-8D-5C-C1-2F-4F
   - platform: flux
@@ -116,10 +122,6 @@ switch:
         command_off: "curl --silent 'http://192.168.1.65/admin/api.php?disable=3600&auth='"
         command_state: "curl -X --silent 'http://192.168.1.65/admin/api.php?status'"
         value_template: "{{ value_json.status == 'enabled' }}"
-      led:
-        command_on: "curl --silent http://192.168.1.116/led/toggle"
-        command_off: "curl --silent http://192.168.1.116/led/toggle"
-        command_state: "curl --silent http://192.168.1.116/led/state"
 
 binary_sensor:
   - platform: command_line

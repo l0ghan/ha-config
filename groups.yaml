@@ -113,6 +113,7 @@ bedroom:
     - media_player.bedroom
     - light.bedroom
     - switch.flux
+    - switch.electric_blanket
 
 diningroom:
   entities:
@@ -142,7 +143,6 @@ thomas:
 office:
   entities:
     - switch.desk_lights_switch
-    - switch.led
     - switch.wake_on_lan
     - binary_sensor.office_sensor
     - sensor.office_temperature
