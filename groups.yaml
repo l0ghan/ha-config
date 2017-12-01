@@ -84,6 +84,7 @@ all_motion_sensors:
     - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
+    - binary_sensor.nodemcu1
 
 links:
   entities:
@@ -102,6 +103,7 @@ motion:
     - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
+    - binary_sensor.nodemcu1
 
 lights:
   entities:
@@ -114,7 +116,7 @@ bedroom:
   entities:
     - media_player.bedroom
     - light.bedroom
-    - switch.flux
+    - binary_sensor.nodemcu1
     - switch.electric_blanket
 
 diningroom:
@@ -145,7 +147,6 @@ thomas:
 office:
   entities:
     - switch.desk_lights_switch
-    - switch.wake_on_lan
     - binary_sensor.office_sensor
     - sensor.office_temperature
     - sensor.office_luminance
@@ -160,6 +161,7 @@ pi_status:
   entities:
     - sensor.since_last_boot
     - sensor.ram_used
+    - sensor.cpu_temperature
     - sensor.disk_used_
     - sensor.disk_used_mnt
     - sensor.speedtest_download
@@ -176,7 +178,6 @@ load:
 pihole_stats:
   name: PiHole Stats
   entities:
-    - switch.pihole
     - sensor.pihole_ads_blocked_today
     - sensor.pihole_ads_percentage_blocked_today
     - sensor.pihole_dns_unique_clients

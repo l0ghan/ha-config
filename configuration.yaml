@@ -110,20 +110,13 @@ shell_command: !include shell_commands.yaml
 switch:
   - platform: tplink
     host: 192.168.1.117
-  - platform: wake_on_lan
-    mac_address: 40-8D-5C-C1-2F-4F
-  - platform: flux
-    lights:
-      - light.bedroom
-  - platform: command_line
-    switches:
-      pihole:
-        command_on: "curl --silent 'http://192.168.1.65/admin/api.php?enable&auth='"
-        command_off: "curl --silent 'http://192.168.1.65/admin/api.php?disable=3600&auth='"
-        command_state: "curl -X --silent 'http://192.168.1.65/admin/api.php?status'"
-        value_template: "{{ value_json.status == 'enabled' }}"
 
 binary_sensor:
+  - platform: mqtt
+    state_topic: 'home/nodemcu/1/motion'
+    device_class: 'motion'
+    name: 'nodemcu1'
+    value_template: ' {{ value_json.motion }}'
   - platform: command_line
     name: hall_motion
     command:  !secret get_hall_motion_status

@@ -139,8 +139,6 @@ sensor.fibaro_office_battery_level:
 sensor.fibaro_thomas_battery_level:
   friendly_name: Thomas' Fibaro
   show_last_changed: true
-switch.pihole:
-  friendly_name: Pi-Hole Enabled
 group.pihole_stats:
   friendly_name: Pi-Hole Stats
 group.all_automations:
@@ -192,4 +190,7 @@ binary_sensor.landing_motion:
   friendly_name: Landing
   show_last_changed: true
 sensor.gregs_ipad_battery_level:
+  show_last_changed: true
+binary_sensor.nodemcu1:
+  friendly_name: Bedroom
   show_last_changed: true
