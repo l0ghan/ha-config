@@ -1,0 +1,6 @@
+# log_level: debug
+
+pages:
+  - /local/custom_ui/floorplan/master.yaml
+  - /local/custom_ui/floorplan/ground_floor.yaml
+  - /local/custom_ui/floorplan/first_floor.yaml

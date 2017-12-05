@@ -116,6 +116,7 @@ bedroom:
   entities:
     - media_player.bedroom
     - light.bedroom
+    - light.bed_underlights
     - binary_sensor.nodemcu1
     - switch.electric_blanket
 
@@ -148,6 +149,7 @@ office:
   entities:
     - switch.desk_lights_switch
     - binary_sensor.office_sensor
+    - light.backlights
     - sensor.office_temperature
     - sensor.office_luminance
 

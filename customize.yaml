@@ -194,3 +194,5 @@ sensor.gregs_ipad_battery_level:
 binary_sensor.nodemcu1:
   friendly_name: Bedroom
   show_last_changed: true
+light.backlights:
+  friendly_name: Backlight

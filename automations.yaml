@@ -3,10 +3,17 @@
   - entity_id: binary_sensor.office_sensor
     platform: state
     to: 'on'
-  action:
-  - data:
+  condition:
+    condition: state
+    entity_id: 'switch.desk_lights_switch'
+    state: 'off'
+  action:  
+  - service: switch.turn_on
+    data:
       entity_id: switch.desk_lights_switch
-    service: switch.turn_on
+  - service: light.turn_off
+    data:
+      entity_id: light.backlights
 
 - alias: Turn off office lights when there is no longer any motion
   trigger:
@@ -18,7 +25,10 @@
   action:
   - service: switch.turn_off
     data:
-        entity_id: switch.desk_lights_switch
+      entity_id: switch.desk_lights_switch
+  - service: light.turn_off
+    data:
+      entity_id: light.backlights
 
 - alias: Turn on dining room light and disable alerts when someone comes home
   trigger:
@@ -132,3 +142,15 @@
   - service: switch.turn_off
     data:
       entity_id: switch.electric_blanket
+
+- alias: "Porch Animation Speed"
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_number.porch_animation_speed
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "bruh/porch/set"
+        payload: '{"transition":{{ trigger.to_state.state | int }}}'

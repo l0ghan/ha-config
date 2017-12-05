@@ -1,0 +1,29 @@
+page_id: ground_floor
+image: /local/custom_ui/floorplan/ground_floor.svg
+stylesheet: /local/custom_ui/floorplan/ground_floor.css
+
+rules:
+  - name: Lights
+    entities:
+    - light.dining_room
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: homeassistant.toggle
+
+  - name: Cameras
+    entities:
+    - camera.drive
+    - camera.hall
+    - camera.garden
+
+  - name: Trackers
+    entities:
+      - device_tracker.lynette_iphone
+      - device_tracker.gregs_iphone_8
+    states:
+      - state: 'home'
+        class: 'device-home'

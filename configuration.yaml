@@ -10,9 +10,7 @@ homeassistant:
 
 frontend:
   themes: !include themes.yaml
-  extra_html_url:
-    - /local/custom_ui/state-card-floorplan.html
-    - /local/custom_ui/state-card-custom-ui.html
+  javascript_version: latest
 
 config:
 http:
@@ -150,13 +148,51 @@ input_boolean:
 
 panel_custom:
   - name: floorplan
-    sidebar_title: Floor Plan (Desktop)
+    sidebar_title: Floorplan
     sidebar_icon: mdi:floor-plan
-    url_path: desktop
-    config: !include floorplan2.yaml
+    url_path: floorplan
+    config:
+      config: /local/custom_ui/floorplan/floorplan.yaml
 
-  - name: floorplan
-    sidebar_title: Floor Plan (Mobile)
-    sidebar_icon: mdi:floor-plan
-    url_path: mobile
-    config: !include floorplan.yaml
+light:  
+  - platform: mqtt_json
+    name: "backlights"
+    state_topic: "home/office/backlight"
+    command_topic: "home/office/backlight/set"
+  - platform: mqtt_json
+    name: "Bed Underlights"
+    state_topic: "home/bedroom/bed/lights"
+    command_topic: "home/bedroom/bed/lights/set"
+    effect: true
+    effect_list:
+      - bpm
+      - candy cane
+      - confetti
+      - cyclon rainbow
+      - dots
+      - fire
+      - glitter
+      - juggle
+      - lightning
+      - noise
+      - police all
+      - police one
+      - rainbow
+      - rainbow with glitter
+      - ripple
+      - sinelon
+      - solid
+      - twinkle
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+
+input_number:
+  porch_animation_speed:
+    name: Porch Animation Speed
+    mode: slider
+    initial: 150
+    min: 1
+    max: 150
+    step: 10
