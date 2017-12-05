@@ -2,7 +2,7 @@
   trigger:
   - entity_id: binary_sensor.office_sensor
     platform: state
-    to: 'on' 
+    to: 'on'
   condition:
     condition: state
     entity_id: 'switch.desk_lights_switch'
@@ -125,7 +125,7 @@
   action:
   - service: script.disable_camera_detection
 
-- alias: Turn on electric blanket
+- alias: Turn on electric blanket at 6:30pm
   trigger:
     - platform: time
       at: '18:30:00'
@@ -134,7 +134,7 @@
     data:
       entity_id: switch.electric_blanket
 
-- alias: Turn off electric blanket
+- alias: Turn off electric blanket at 11pm
   trigger:
     - platform: time
       at: '23:00:00'
@@ -154,3 +154,21 @@
       data_template:
         topic: "bruh/porch/set"
         payload: '{"transition":{{ trigger.to_state.state | int }}}'
+
+- alias: Turn on bed lights at 7pm
+  trigger:
+    - platform: time
+      at: '19:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.bed_underlights
+
+- alias: Turn off bed lights 7am
+  trigger:
+    - platform: time
+      at: '07:00:00'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bed_underlights
