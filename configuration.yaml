@@ -49,6 +49,11 @@ recorder:
       - camera.garden
       - camera.thomas
       - zwave.office
+      - zwave.thomas
+      - sensor.thomas_alarm_type
+      - sensor.thomas_alarm_level
+      - sensor.thomas_sourcenodeid
+      - sensor.thomas_burglar
       - zwave.desk_lights
       - group.all_switches
       - sensor.pihole_ads_percentage_today
@@ -58,6 +63,9 @@ recorder:
       - sensor.pihole_ads_blocked_today
       - sensor.lights_on_count
       - automation.turn_on_office_lights_on_motion
+      - switch.electric_blanket
+      - group.motion
+      - group.thomas 
 
 updater:
 group: !include groups.yaml
