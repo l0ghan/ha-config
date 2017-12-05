@@ -2,7 +2,7 @@
   trigger:
   - entity_id: binary_sensor.office_sensor
     platform: state
-    to: 'on'
+    to: 'on' 
   condition:
     condition: state
     entity_id: 'switch.desk_lights_switch'
