@@ -68,9 +68,9 @@
      inkscape:window-height="974"
      id="namedview4487"
      showgrid="true"
-     inkscape:zoom="1"
-     inkscape:cx="434.78815"
-     inkscape:cy="187.28644"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="402.51269"
+     inkscape:cy="248.49061"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -106,17 +106,6 @@
        originx="223.03371"
        originy="-650.05697" />
   </sodipodi:namedview>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:36.73652267px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-     x="412.30649"
-     y="-23.784727"
-     id="text4799-6"><tspan
-       sodipodi:role="line"
-       id="tspan4797-4"
-       x="412.30649"
-       y="9.7311163"
-       style="stroke-width:1" /></text>
   <g
      id="g4564"
      transform="matrix(0.63937553,0,0,0.63937553,-405.23082,-143.52772)"
@@ -355,11 +344,6 @@
      x="176.12575"
      y="11.475486"
      inkscape:label="content" />
-  <g
-     transform="matrix(0.99440413,0,0,0.99954521,5.4341615,62.302052)"
-     id="g5121-1"
-     inkscape:label="Ground Floor"
-     style="fill:#cccccc" />
   <rect
      style="fill:#cccccc;fill-opacity:0.32352941;stroke:#000000;stroke-width:1.20299995;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="floorplan.first_floor_button"

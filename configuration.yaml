@@ -116,6 +116,8 @@ shell_command: !include shell_commands.yaml
 switch:
   - platform: tplink
     host: 192.168.1.117
+  - platform: tplink
+    host: 192.168.1.121
 
 binary_sensor:
   - platform: mqtt

@@ -64,7 +64,7 @@
     lights_on_count:
       friendly_name: 'Lights On'
       value_template: >
-        {%- set lights = [states.light.dining_room, states.light.bedroom, states.switch.desk_lights_switch] %}
+        {%- set lights = [states.light.dining_room, states.light.bedroom, states.switch.desk_lights_switch, states.light.bed_underlights, states.switch.christmas_lights] %}
 
         {% for state in lights if state.state == 'on' %}
           {% if loop.last %}

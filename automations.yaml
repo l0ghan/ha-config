@@ -14,6 +14,9 @@
   - service: light.turn_off
     data:
       entity_id: light.backlights
+  - service: notify.slack
+    data:
+      message: ":bulb: Hey! Turning on lights in the office."
 
 - alias: Turn off office lights when there is no longer any motion
   trigger:
@@ -29,8 +32,11 @@
   - service: light.turn_off
     data:
       entity_id: light.backlights
+  - service: notify.slack
+    data:
+      message: ":bulb: Looks like the office is now empty so I'm turning the lights off."
 
-- alias: Turn on dining room light and disable alerts when someone comes home
+- alias: Turn on dining room light and disable security when someone comes home
   trigger:
   - entity_id: group.family
     platform: state
@@ -40,10 +46,16 @@
     after_offset: -02:00:00
     condition: sun
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.dining_room
-
+  - service: light.turn_on
+    data:
+      entity_id: light.dining_room
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.enable_security
+  - service: notify.slack
+    data:
+      message: ":wave::skin-tone-2: Someone just got home. Turning on the dining room lights."
+      
 - alias: Enable security and send when house becomes empty
   trigger:
   - entity_id: group.family
@@ -54,16 +66,6 @@
     data:
       message: ":information_source: House is now empty. Enabling motion sensor alerts..."
   - service: input_boolean.turn_on
-    data:
-      entity_id: input_boolean.enable_security
-
-- alias: Disable security when house is no longer empty
-  trigger:
-  - entity_id: group.family
-    platform: state
-    to: not_home
-  action:
-  - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.enable_security
 
@@ -90,7 +92,7 @@
   action:
   - service: notify.slack
     data_template:
-      message: '{{ trigger.to_state.attributes.friendly_name }}''s is less than: 20%'
+      message: ':battery: {{ trigger.to_state.attributes.friendly_name }}''s is less than 20% battery'
 
 - alias: Low outside temperature
   trigger:
@@ -105,9 +107,9 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.slack
+  - service: notify.slack
     data:
-      message: 'There is a new Home Assistant release available.'
+      message: ':hass: There is a new Home Assistant release available.'
 
 - alias: Enable internal camera recording
   trigger:
@@ -116,6 +118,9 @@
       to: 'on'
   action:
   - service: script.enable_camera_detection
+  - service: notify.slack
+    data:
+      message: ':cctv: Enabling the internal cameras.'
 
 - alias: Disable internal camera recording
   trigger:
@@ -124,6 +129,9 @@
       to: 'off'
   action:
   - service: script.disable_camera_detection
+  - service: notify.slack
+    data:
+      message: ':cctv: Disabling the internal cameras.'
 
 - alias: Turn on electric blanket at 6:30pm
   trigger:
@@ -133,6 +141,9 @@
   - service: switch.turn_on
     data:
       entity_id: switch.electric_blanket
+  - service: notify.slack
+    data:
+      message: ":fire: Brownie points incoming. Automatically turning on the electric blanket..."
 
 - alias: Turn off electric blanket at 11pm
   trigger:
@@ -142,33 +153,54 @@
   - service: switch.turn_off
     data:
       entity_id: switch.electric_blanket
-
-- alias: "Porch Animation Speed"
-  initial_state: True
-  hide_entity: False
-  trigger:
-    - platform: state
-      entity_id: input_number.porch_animation_speed
-  action:
-    - service: mqtt.publish
-      data_template:
-        topic: "bruh/porch/set"
-        payload: '{"transition":{{ trigger.to_state.state | int }}}'
+  - service: notify.slack
+    data:
+      message: ':fire: Enough warmth. Turning off the electric blanket.'
 
 - alias: Turn on bed lights at 7pm
   trigger:
     - platform: time
       at: '19:00:00'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.bed_underlights
+  - service: light.turn_on
+    data:
+      entity_id: light.bed_underlights
+  - service: notify.slack
+    data:
+      message: ":electric_plug: It's almost bed time. Turning the underlights on."
 
 - alias: Turn off bed lights 7am
   trigger:
     - platform: time
       at: '07:00:00'
   action:
-    - service: light.turn_off
-      data:
-        entity_id: light.bed_underlights
+  - service: light.turn_off
+    data:
+      entity_id: light.bed_underlights
+  - service: notify.slack
+    data:
+      message: ':electric_plug: Morning! Turning off the bed lights now.'
+
+- alias: Turn off Christmas lights at 1am
+  trigger:
+    - platform: time
+      at: '01:00:00'
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.christmas_lights
+  - service: notify.slack
+    data:
+      message: ':christmas_tree: Time for bed. Turning the Christmas lights off.'
+
+- alias: Turn on Christmas lights at sunset
+  trigger:
+    - platform: sun
+      event: sunset
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.christmas_lights
+  - service: notify.slack
+    data:
+      message: ':christmas_tree: Sunset. Turning the Christmas lights on.'
