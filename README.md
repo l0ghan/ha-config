@@ -50,3 +50,5 @@ High level overview:
 - Slack notifications when a new HA update is available
 
 Whenever any automation fires I get a Slack update to let me know what's going on.
+
+![Slack](/images/slack.png)
