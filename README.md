@@ -32,7 +32,7 @@ Floorplan
 ![UI](/images/floorplan.png)
 
 * Dark grey rooms can't be controlled as they have no zwave lights in yet
-* Light grey rooms mean they'vee got controllable lights, and a tap on the room will toggle them
+* Light grey rooms mean they've got controllable lights, and a tap on the room will toggle them
 * Yellow rooms are rooms with lights already turned on
 * The diagonally hatched rooms are rooms with currently detected motion
 
