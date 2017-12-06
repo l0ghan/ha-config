@@ -36,3 +36,12 @@ rules:
     states:
       - state: 'off'
         class: 'invisible'
+
+  - name: Sensors
+    entities:
+      - binary_sensor.office_sensor
+      - binary_sensor.thomas_sensor
+      - binary_sensor.landing_motion
+    states:
+      - state: 'off'
+        class: 'invisible'

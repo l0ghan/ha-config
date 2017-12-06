@@ -65,8 +65,16 @@
       friendly_name: 'Lights On'
       value_template: >
         {%- set lights = [states.light.dining_room, states.light.bedroom, states.switch.desk_lights_switch, states.light.bed_underlights, states.switch.christmas_lights] %}
-
-        {% for state in lights if state.state == 'on' %}
+        {% for light in lights if light.state == 'on' %}
+          {% if loop.last %}
+            {{loop.index}} 
+          {% endif %}
+        {% endfor %}
+    motion_on_count:
+      friendly_name: 'Motion Sensors On'
+      value_template: >
+        {%- set sensors = [states.binary_sensor.thomas_sensor, states.binary_sensor.office_sensor, states.binary_sensor.hall_motion, states.binary_sensor.landing_motion, states.binary_sensor.nodemcu1] %}
+        {% for entity in sensors if entity.state == 'on' %}
           {% if loop.last %}
             {{loop.index}} 
           {% endif %}
