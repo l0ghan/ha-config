@@ -214,3 +214,12 @@
     data:
       message: ':closed_lock_with_key: An invalid logon attempt has been stopped. {{ states.persistent_notification.httplogin.attributes.message }}.'
   
+  
+- alias: Startup notification
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+  - service: notify.slack
+    data:
+      message: ':hass: Home Assistant is up and running.'
