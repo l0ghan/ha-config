@@ -167,6 +167,7 @@ pi_status:
   name: Server Status
   entities:
     - sensor.since_last_boot
+    - sensor.ha_uptime
     - sensor.ram_used
     - sensor.cpu_temperature
     - sensor.disk_used_

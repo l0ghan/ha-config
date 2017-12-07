@@ -109,7 +109,7 @@
   action:
   - service: notify.slack
     data:
-      message: ':hass: There is a new Home Assistant release available.'
+      message: ':hass: There is a new Home Assistant release available - <{{ states.updater.updater.attributes.release_notes }}>'
 
 - alias: Enable internal camera recording
   trigger:
