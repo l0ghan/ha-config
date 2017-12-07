@@ -74,3 +74,21 @@ disable_camera_detection:
   sequence:
   - service: script.hall_camera_disable_detection
   - service: script.landing_camera_disable_detection
+
+bedroom_remote_control:
+  sequence:
+bedroom_tv_volume_up:
+  sequence:
+bedroom_tv_volume_down:
+  sequence:
+bedroom_tv_power:
+  sequence:
+
+living_room_remote_control:
+  sequence:
+living_room_tv_volume_up:
+  sequence:
+living_room_tv_volume_down:
+  sequence:
+living_room_tv_power:
+  sequence:

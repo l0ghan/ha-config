@@ -196,3 +196,37 @@ binary_sensor.nodemcu1:
   show_last_changed: true
 light.backlights:
   friendly_name: Backlight
+script.bedroom_remote_control:
+  config:
+    column_width: 95px
+    columns: 2
+    entities:
+    - column_span: 2
+      entity: script.bedroom_tv_power
+      icon: mdi:power
+    - entity: script.bedroom_tv_volume_up
+      icon: mdi:volume-plus
+    - entity: script.bedroom_tv_volume_down
+      icon: mdi:volume-minus
+    row_height: 95px
+  custom_ui_state_card: state-card-tiles
+  friendly_name: Bedroom
+script.living_room_remote_control:
+  config:
+    column_width: 95px
+    columns: 2
+    entities:
+    - column_span: 2
+      entity: script.living_room_tv_power
+      icon: mdi:power
+    - entity: script.living_room_tv_volume_up
+      icon: mdi:volume-plus
+    - entity: script.living_room_tv_volume_down
+      icon: mdi:volume-minus
+    row_height: 95px
+  custom_ui_state_card: state-card-tiles
+  friendly_name: Living Room
+group.bedroom_remote:
+  friendly_name: Bedroom
+group.living_room_remote:
+  friendly_name: Living Room

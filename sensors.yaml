@@ -79,6 +79,14 @@
             {{loop.index}} 
           {% endif %}
         {% endfor %}
+    last_camera_motion:
+      value_template: >
+        {%- set sensors = [states.binary_sensor.hall_motion, states.binary_sensor.landing_motion] %}
+        {% for sensor in sensors %}
+          {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
+            {{ sensor.name }}
+          {% endif %}
+        {% endfor %}
 
 - platform: pi_hole
   monitored_conditions:

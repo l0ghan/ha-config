@@ -18,6 +18,13 @@ cameras:
     - group.camera_thomas
     - group.camera_controls
 
+remote:
+  view: yes
+  icon: mdi:remote
+  entities:
+    - group.bedroom_remote
+    - group.living_room_remote
+
 rooms:
   view: yes
   entities:
@@ -199,3 +206,11 @@ processes:
     - sensor.process_plex_media_server
     - sensor.process_pureftpd
     - sensor.process_homebridge
+
+bedroom_remote:
+  entities:
+  - script.bedroom_remote_control
+
+living_room_remote:
+  entities:
+  - script.living_room_remote_control

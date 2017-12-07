@@ -11,6 +11,8 @@ homeassistant:
 frontend:
   themes: !include themes.yaml
   javascript_version: latest
+  extra_html_url:
+    - /local/custom_ui/state-card-tiles.html
 
 config:
 http:
@@ -65,7 +67,9 @@ recorder:
       - automation.turn_on_office_lights_on_motion
       - switch.electric_blanket
       - group.motion
-      - group.thomas 
+      - group.thomas
+      - sensor.ha_uptime
+      - sensor.motion_on_count
 
 updater:
 group: !include groups.yaml
