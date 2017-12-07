@@ -204,3 +204,13 @@
   - service: notify.slack
     data:
       message: ':christmas_tree: Sunset. Turning the Christmas lights on.'
+
+- alias: Alert on bad logon attempts
+  trigger:
+    platform: template
+    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
+  action:
+  - service: notify.slack
+    data:
+      message: ':closed_lock_with_key: An invalid logon attempt has been stopped. {{ states.persistent_notification.httplogin.attributes.message }}.'
+  

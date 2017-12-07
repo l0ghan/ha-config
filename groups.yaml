@@ -54,6 +54,7 @@ automation:
     - automation.turn_on_electric_blanket_at_630pm
     - automation.turn_on_office_lights_on_motion
     - automation.update_notifications
+    - automation.alert_on_bad_logon_attempts
 
 camera_thomas:
   entities:
