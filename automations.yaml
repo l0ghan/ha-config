@@ -160,7 +160,7 @@
 - alias: Turn on bed lights at 7pm
   trigger:
     - platform: time
-      at: '19:00:00'
+      at: '18:00:00'
   action:
   - service: light.turn_on
     data:
