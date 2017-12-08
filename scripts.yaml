@@ -79,10 +79,22 @@ bedroom_remote_control:
   sequence:
 bedroom_tv_volume_up:
   sequence:
+    - service: mqtt.publish
+      data_template:
+        payload: '{"volume":"up"}'
+        topic: 'home/bedroom/tv'
 bedroom_tv_volume_down:
   sequence:
+    - service: mqtt.publish
+      data_template:
+        payload: '{"volume":"down"}'
+        topic: 'home/bedroom/tv'
 bedroom_tv_power:
   sequence:
+    - service: mqtt.publish
+      data_template:
+        payload: '{"power":"on"}'
+        topic: 'home/bedroom/tv'
 
 living_room_remote_control:
   sequence:
