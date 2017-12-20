@@ -201,9 +201,10 @@ script.bedroom_remote_control:
     column_width: 95px
     columns: 2
     entities:
-    - column_span: 2
-      entity: script.bedroom_tv_power
+    - entity: script.bedroom_tv_power
       icon: mdi:power
+    - entity: script.bedroom_tv_playpause
+      icon: mdi:play-pause
     - entity: script.bedroom_tv_volume_up
       icon: mdi:volume-plus
     - entity: script.bedroom_tv_volume_down
@@ -230,3 +231,7 @@ group.bedroom_remote:
   friendly_name: Bedroom
 group.living_room_remote:
   friendly_name: Living Room
+sensor.secrets:
+  hidden: true
+  icon: mdi:file-lock
+  base_url: !secret base_url

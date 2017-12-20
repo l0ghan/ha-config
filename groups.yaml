@@ -23,6 +23,7 @@ remote:
   icon: mdi:remote
   entities:
     - group.bedroom_remote
+    - media_player.bedroom
     - group.living_room_remote
 
 rooms:
@@ -45,24 +46,24 @@ network:
 automation:
   view: yes
   entities:
+    - automation.alert_on_bad_logon_attempts
     - automation.disable_internal_camera_recording
     - automation.enable_internal_camera_recording
     - automation.enable_security_and_send_when_house_becomes_empty
     - automation.low_battery_alert
     - automation.low_outside_temperature
     - automation.motion_alert
-    - automation.turn_off_christmas_lights_at_1am
-    - automation.turn_off_bed_lights_7am
+    - automation.startup_notification
+    - automation.turn_off_christmas_lights_at_midnight
+    - automation.turn_off_bed_lights_8am
     - automation.turn_off_electric_blanket_at_11pm
     - automation.turn_off_office_lights_when_there_is_no_longer_any_motion
     - automation.turn_on_christmas_lights_at_sunset
-    - automation.turn_on_bed_lights_at_7pm
+    - automation.turn_on_bed_lights_at_6pm
     - automation.turn_on_dining_room_light_and_disable_security_when_someone_comes_home
     - automation.turn_on_electric_blanket_at_630pm
     - automation.turn_on_office_lights_on_motion
     - automation.update_notifications
-    - automation.alert_on_bad_logon_attempts
-    - automation.startup_notification
 
 camera_thomas:
   entities:

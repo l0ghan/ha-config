@@ -35,6 +35,8 @@
 
 - platform: template
   sensors:
+    secrets:
+      value_template: "Secrets Container"
     fibaro_office_battery_level:
       unit_of_measurement: '%'
       value_template: "{{ states.zwave.office.attributes.battery_level | default(0) | int }}"

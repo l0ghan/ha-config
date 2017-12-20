@@ -42,28 +42,6 @@ notify_of_low_temp:
       title: 'Temperature Warning'
       message: 'Outside temperature is below 0c ({{ states.sensor.dark_sky_apparent_temperature.state }}{{ states.sensor.dark_sky_apparent_temperature.attributes.unit_of_measurement  }})'
 
-notify_on_motion_alert:
-  sequence:
-  - service: notify.slack
-    data_template:
-      message: ":warning: There has been a motion alert in the house. Here's the current status..."
-      target: "#home"
-      data:
-        attachments:
-        - color: "#FCD116"
-          fields:
-          - title: Hall
-            value: "{{ states('binary_sensor.hall_motion') }}"
-            short: true
-          - title: Landing
-            value: "{{ states('binary_sensor.landing_motion') }}"
-            short: true
-          - title: Office
-            value: "{{ states('binary_sensor.office_sensor') }}"
-            short: true
-          - title: Thomas
-            value: "{{ states('binary_sensor.thomas_sensor') }}"
-            short: true
 
 enable_camera_detection:
   sequence:
@@ -95,7 +73,11 @@ bedroom_tv_power:
       data_template:
         payload: '{"power":"on"}'
         topic: 'home/bedroom/tv'
-
+bedroom_tv_playpause:
+  sequence:
+    - service: media_player.media_play_pause
+      data:
+        entity_id: media_player.bedroom
 living_room_remote_control:
   sequence:
 living_room_tv_volume_up:
