@@ -9,3 +9,4 @@ custom_components/customizer/__init__.py
 update.sh
 custom_components/customizer/services.yaml
 *.tmp
+/arduino/bedlights/bedlights.ino
