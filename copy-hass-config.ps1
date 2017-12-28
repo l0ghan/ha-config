@@ -1,4 +1,4 @@
-﻿$from = '\\192.168.1.65\hass\'
+$from = '\\192.168.1.65\hass\'
 $to = 'C:\git\repos\ha-config'
 
 Get-ChildItem -Path $from | % { 

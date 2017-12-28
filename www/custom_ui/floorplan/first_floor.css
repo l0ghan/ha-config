@@ -32,24 +32,6 @@ svg, svg * {
   display: none;
 }
 
-.danger-background, .danger-text-background {
-  fill: #df2b2b !important;
-  fill-opacity: 1 !important;
-  stroke: #50131d !important;
-  stroke-width: 1px !important;
-  pointer-events: none;
-}
-
-/* Last motion entity */
-
-.last-motion {
-  stroke: #808080 !important;
-  stroke-width: 1px !important;
-  stroke-opacity: 1 !important;
-}
-
-/* Light */
-
 .light-off {
   fill: #c9caccff !important;
 }

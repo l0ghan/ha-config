@@ -171,10 +171,6 @@ sensor.tradfri_remote_control:
   show_last_changed: true
 sensor.tradfri_remote_control_2:
   show_last_changed: true
-light.bedroom:
-  state_card_mode: break-slider-toggle
-light.dining_room:
-  state_card_mode: break-slider-toggle
 group.load:
   state_card_mode: badges
 sensor.gregs_ipad_battery_state:

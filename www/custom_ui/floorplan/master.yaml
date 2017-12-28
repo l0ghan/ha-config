@@ -6,9 +6,6 @@ master_page:
   content_element: content
 
 rules:
-
-# Page navigation
-
   - element: floorplan.ground_floor_button
     action:
       service: floorplan.page_navigate
@@ -20,15 +17,3 @@ rules:
       service: floorplan.page_navigate
       data:
         page_id: first_floor
-
-  - name: Trackers
-    entities:
-      - device_tracker.lynette_iphone
-      - device_tracker.gregs_iphone_8
-    states:
-      - state: 'home'
-        class: 'device-home'
-
-  - name: Counters
-    entities:
-      - sensor.lights_on_count

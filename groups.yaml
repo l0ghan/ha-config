@@ -122,16 +122,18 @@ lights:
   entities:
     - light.bedroom
     - light.dining_room
-    - switch.christmas_lights
-    - light.bed_underlights
+    - light.downstairs_toilet
+    - light.hall
+    - light.living_room_play_area
+    - light.living_room_tv_area
     - switch.desk_lights_switch
+    - switch.christmas_lights
     - sensor.lights_on_count
 
 bedroom:
   entities:
     - media_player.bedroom
     - light.bedroom
-    - light.bed_underlights
     - binary_sensor.nodemcu1
     - switch.electric_blanket
 

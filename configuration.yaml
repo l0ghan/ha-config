@@ -107,6 +107,7 @@ zwave:
 tradfri:
   host: 192.168.1.97
   allow_tradfri_groups: false
+
 zone:
   - name: SEL
     latitude: 53.201563
@@ -170,39 +171,11 @@ panel_custom:
     config:
       config: /local/custom_ui/floorplan/floorplan.yaml
 
-light:  
-  - platform: mqtt_json
-    name: "backlights"
-    state_topic: "home/office/backlight"
-    command_topic: "home/office/backlight/set"
-  - platform: mqtt_json
-    name: "Bed Underlights"
-    state_topic: "home/bedroom/bed/lights"
-    command_topic: "home/bedroom/bed/lights/set"
-    effect: true
-    effect_list:
-      - bpm
-      - candy cane
-      - confetti
-      - cyclon rainbow
-      - dots
-      - fire
-      - glitter
-      - juggle
-      - lightning
-      - noise
-      - police all
-      - police one
-      - rainbow
-      - rainbow with glitter
-      - ripple
-      - sinelon
-      - solid
-      - twinkle
-    brightness: true
-    flash: true
-    rgb: true
-    optimistic: false
+panel_iframe:
+  cameras:
+    title: Camera
+    icon: mdi:image
+    url: http://192.168.1.65:8000
 
 input_number:
   porch_animation_speed:

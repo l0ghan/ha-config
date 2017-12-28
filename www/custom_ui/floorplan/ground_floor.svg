@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -68,9 +68,9 @@
      inkscape:window-height="1017"
      id="namedview4487"
      showgrid="true"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="352.53209"
-     inkscape:cy="347.50454"
+     inkscape:zoom="2"
+     inkscape:cx="109.57577"
+     inkscape:cy="377.3165"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -115,6 +115,14 @@
      y="97.121063"
      inkscape:label="LivingRoomFloor" />
   <rect
+     inkscape:label="LivingRoomFloor"
+     y="102.12106"
+     x="19.875"
+     height="239.81464"
+     width="199.72978"
+     id="light.living_room_tv_area"
+     style="fill:#7e8086;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <rect
      style="fill:#7e8086;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4625"
      width="247.46017"
@@ -132,23 +140,15 @@
      inkscape:label="DiningRoomFloor" />
   <rect
      style="fill:#7e8086;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect4629"
+     id="light.hall"
      width="172.28241"
      height="373.78165"
      x="224.79192"
      y="228.70016"
      inkscape:label="HallFloor" />
   <rect
-     style="fill:#7e8086;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000015, 12.00000084;stroke-dashoffset:0;stroke-opacity:1"
-     id="binary_sensor.hall_motion"
-     width="162.23024"
-     height="333.5022"
-     x="229.84477"
-     y="241.07626"
-     inkscape:label="binary_sensor.hall_motion" />
-  <rect
      style="fill:#7e8086;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect4631"
+     id="light.downstairs_toilet"
      width="80.588165"
      height="162.08786"
      x="227.84264"
@@ -966,4 +966,12 @@
      d="m 611.85503,194.63293 c -0.87217,-0.41302 -1.23918,-1.45303 -0.81715,-2.31563 0.3036,-0.62053 0.82202,-0.93779 1.5359,-0.93991 0.40472,-0.001 0.5154,0.0242 0.81028,0.18605 0.78549,0.43111 1.12382,1.37934 0.7836,2.19617 -0.12957,0.31108 -0.53515,0.71682 -0.87513,0.87547 -0.43182,0.20152 -1.00924,0.20066 -1.4375,-0.002 z"
      id="path4721"
      inkscape:connector-curvature="0" />
+  <rect
+     style="fill:#7e8086;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="light.living_room_play_area"
+     width="199.72978"
+     height="142.15582"
+     x="19.875"
+     y="341.65344"
+     inkscape:label="LivingRoomFloor" />
 </svg>

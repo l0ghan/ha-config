@@ -188,30 +188,6 @@
     data:
       message: ':fire: Enough warmth. Turning off the electric blanket.'
 
-- alias: Turn on bed lights at 6pm
-  trigger:
-    - platform: time
-      at: '18:00:00'
-  action:
-  - service: light.turn_on
-    data:
-      entity_id: light.bed_underlights
-  - service: notify.slack
-    data:
-      message: ":electric_plug: It's almost bed time. Turning the underlights on."
-
-- alias: Turn off bed lights 8am
-  trigger:
-    - platform: time
-      at: '08:00:00'
-  action:
-  - service: light.turn_off
-    data:
-      entity_id: light.bed_underlights
-  - service: notify.slack
-    data:
-      message: ':electric_plug: Morning! Turning off the bed lights now.'
-
 - alias: Turn off Christmas lights at midnight
   trigger:
     - platform: time
