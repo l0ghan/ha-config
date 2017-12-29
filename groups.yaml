@@ -44,7 +44,7 @@ network:
     - group.pihole_stats
 
 automation:
-view: yes
+  view: yes
   entities:
     - automation.alert_on_bad_logon_attempts
     - automation.disable_internal_camera_recording
