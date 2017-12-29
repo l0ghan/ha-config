@@ -11,9 +11,6 @@
   - service: switch.turn_on
     data:
       entity_id: switch.desk_lights_switch
-  - service: light.turn_off
-    data:
-      entity_id: light.backlights
   - service: notify.slack
     data:
       message: ":bulb: Hey! Turning on lights in the office."
@@ -25,18 +22,19 @@
     for:
       minutes: 10
     to: 'off'
+  condition:
+    condition: state
+    entity_id: switch.desk_lights_switch
+    state: 'on'
   action:
   - service: switch.turn_off
     data:
       entity_id: switch.desk_lights_switch
-  - service: light.turn_off
-    data:
-      entity_id: light.backlights
   - service: notify.slack
     data:
       message: ":bulb: Looks like the office is now empty so I'm turning the lights off."
 
-- alias: Turn on dining room light and disable security when someone comes home
+- alias: Disable security when someone comes home
   trigger:
   - entity_id: group.family
     platform: state
@@ -46,17 +44,14 @@
     after_offset: -02:00:00
     condition: sun
   action:
-  - service: light.turn_on
-    data:
-      entity_id: light.dining_room
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.enable_security
   - service: notify.slack
     data:
-      message: ":wave::skin-tone-2: Someone just got home. Turning on the dining room lights."
+      message: ":wave::skin-tone-2: Someone just got home. Disabling security."
       
-- alias: Enable security and send when house becomes empty
+- alias: Enable security and send notification when house becomes empty
   trigger:
   - entity_id: group.family
     platform: state
@@ -230,3 +225,39 @@
   - service: notify.slack
     data:
       message: ':hass: Home Assistant is up and running.'
+
+- alias: Turn on hall lights on motion
+  trigger:
+  - entity_id: binary_sensor.hall_motion
+    platform: state
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.hall
+      state: 'off'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+  - service: notify.slack
+    data:
+      message: ":bulb: Turning on the light in the hall."
+
+- alias: Turn off hall lights when there is no longer any motion
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_motion
+    to: 'off'
+    for:
+      minutes: 3
+  condition:
+  - condition: time
+    after: '07:00'
+    before: '22:00'
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+  - service: notify.slack
+    data:
+      message: ":bulb: Turning the hall light off."
