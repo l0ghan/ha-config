@@ -1,6 +1,53 @@
-# log_level: debug
+page_id: floorplan_landscape
+stylesheet: /local/custom_ui/floorplan/floorplan.css
 
-pages:
-  - /local/custom_ui/floorplan/master.yaml
-  - /local/custom_ui/floorplan/ground_floor.yaml
-  - /local/custom_ui/floorplan/first_floor.yaml
+image: 
+  sizes:
+    - min_width: 0
+      location: /local/custom_ui/floorplan/floorplan_portrait.svg
+    - min_width: 1024
+      location: /local/custom_ui/floorplan/floorplan_landscape.svg
+
+rules:
+  - name: Lights
+    entities:
+    - light.dining_room
+    - light.hall
+    - light.downstairs_toilet
+    - light.living_room_tv_area
+    - light.living_room_play_area
+    - light.bedroom
+    - switch.desk_lights_switch
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: homeassistant.toggle
+
+  - name: Cameras
+    entities:
+    - camera.drive
+    - camera.hall
+    - camera.garden
+    - camera.thomas
+    - camera.landing
+
+  - name: Media Players
+    entities:
+      - media_player.bedroom
+    states:
+      - state: 'off'
+        class: 'invisible'
+
+  - name: Sensors
+    entities:
+      - binary_sensor.office_sensor
+      - binary_sensor.landing_motion
+      - binary_sensor.thomas_sensor
+    states:
+      - state: 'off'
+        class: 'invisible'
+      - state: 'on'
+        class: 'unclickable'
