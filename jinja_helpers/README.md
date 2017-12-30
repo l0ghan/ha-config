@@ -7,6 +7,5 @@ Auto generates the 'automation' tab
 ```automation:
   view: yes
   entities:
-{% for state in states.group.all_automations.attributes.entity_id   %}
-    - {{ state }}
-{% endfor %}
+{% for state in states.group.all_automations.attributes.entity_id   %}    - {{ state }}
+{% endfor %}```
