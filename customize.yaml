@@ -130,9 +130,12 @@ weblink.transmission:
   icon: mdi:magnet-on
 sensor.last_backup:
   icon: mdi:backup-restore
-input_boolean.enable_security:
-  friendly_name: Enable Security
+input_boolean.enable_motion_alerts:
+  friendly_name: Motion Alerts
   icon: mdi:shield-half-full
+input_boolean.enable_cameras:
+  friendly_name: Internal Cameras
+  icon: mdi:cctv
 sensor.fibaro_office_battery_level:
   friendly_name: Office Fibaro
   show_last_changed: true

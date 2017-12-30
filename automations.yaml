@@ -46,12 +46,12 @@
   action:
   - service: input_boolean.turn_off
     data:
-      entity_id: input_boolean.enable_security
+      entity_id: input_boolean.enable_motion_alerts
   - service: notify.slack
     data:
-      message: ":wave::skin-tone-2: Someone just got home. Disabling security."
+      message: ":wave::skin-tone-2: Someone just got home. Disabling motion alerts."
       
-- alias: Enable security and send notification when house becomes empty
+- alias: Enable motion alerts and send notification when house becomes empty
   trigger:
   - entity_id: group.family
     platform: state
@@ -62,7 +62,7 @@
       message: ":information_source: House is now empty. Enabling motion sensor alerts..."
   - service: input_boolean.turn_on
     data:
-      entity_id: input_boolean.enable_security
+      entity_id: input_boolean.enable_motion_alerts
 
 - alias: Motion alert
   trigger:
@@ -80,7 +80,7 @@
     to: 'on'
   condition:
   - condition: state
-    entity_id: input_boolean.enable_security
+    entity_id: input_boolean.enable_motion_alerts
     state: 'on'
   action:
   - service: notify.slack
@@ -137,24 +137,44 @@
 - alias: Enable internal camera recording
   trigger:
     - platform: state
-      entity_id: input_boolean.enable_security
+      entity_id: input_boolean.enable_cameras
       to: 'on'
   action:
   - service: script.enable_camera_detection
   - service: notify.slack
     data:
-      message: ':cctv: Enabling the internal cameras.'
+      message: ':cctv: Internal camera recording enabled.'
 
 - alias: Disable internal camera recording
   trigger:
     - platform: state
-      entity_id: input_boolean.enable_security
+      entity_id: input_boolean.enable_cameras
       to: 'off'
   action:
   - service: script.disable_camera_detection
   - service: notify.slack
     data:
-      message: ':cctv: Disabling the internal cameras.'
+      message: ':cctv: Internal camera recording disabled.'
+
+- alias: Enable motion alerts
+  trigger:
+    - platform: state
+      entity_id: input_boolean.enable_motion_alerts
+      to: 'on'
+  action:
+  - service: notify.slack
+    data:
+      message: ':eyes: Motion alerts enabled.'
+
+- alias: Disable motion alerts
+  trigger:
+    - platform: state
+      entity_id: input_boolean.enable_motion_alerts
+      to: 'off'
+  action:
+  - service: notify.slack
+    data:
+      message: ':eyes: Motion alerts disabled.'
 
 - alias: Turn on electric blanket at 6:30pm
   trigger:

@@ -48,9 +48,11 @@ automation:
   entities:
     - automation.alert_on_bad_logon_attempts
     - automation.disable_internal_camera_recording
+    - automation.disable_motion_alerts
     - automation.disable_security_when_someone_comes_home
     - automation.enable_internal_camera_recording
-    - automation.enable_security_and_send_notification_when_house_becomes_empty
+    - automation.enable_motion_alerts
+    - automation.enable_motion_alerts_and_send_notification_when_house_becomes_empty
     - automation.low_battery_alert
     - automation.low_outside_temperature
     - automation.motion_alert
@@ -110,7 +112,8 @@ links:
 
 motion:
   entities:
-    - input_boolean.enable_security
+    - input_boolean.enable_motion_alerts
+    - input_boolean.enable_cameras
     - binary_sensor.thomas_sensor
     - binary_sensor.office_sensor
     - binary_sensor.hall_motion
@@ -166,6 +169,7 @@ office:
     - light.backlights
     - sensor.office_temperature
     - sensor.office_luminance
+    - media_player.plex_web_firefox
 
 family:
   entities:

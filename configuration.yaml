@@ -155,7 +155,9 @@ binary_sensor:
     scan_interval: 5
 
 input_boolean:
-  enable_security:
+  enable_motion_alerts:
+    initial: on
+  enable_cameras:
     initial: on
 
 panel_custom:
