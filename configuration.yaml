@@ -171,12 +171,6 @@ panel_custom:
     config:
       config: /local/custom_ui/floorplan/floorplan.yaml
 
-panel_iframe:
-  cameras:
-    title: Camera
-    icon: mdi:image
-    url: http://192.168.1.65:8000
-
 input_number:
   porch_animation_speed:
     name: Porch Animation Speed
