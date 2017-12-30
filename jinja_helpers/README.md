@@ -4,7 +4,8 @@ A collection of jinja helpers to save doing stuff manually, because where's the 
 
 Auto generates the 'automation' tab
 ------
-```automation:
+```
+automation:
   view: yes
   entities:
 {% for state in states.group.all_automations.attributes.entity_id   %}    - {{ state }}
