@@ -187,9 +187,6 @@ binary_sensor.landing_motion:
   show_last_changed: true
 sensor.gregs_ipad_battery_level:
   show_last_changed: true
-binary_sensor.nodemcu1:
-  friendly_name: Bedroom
-  show_last_changed: true
 light.backlights:
   friendly_name: Backlight
 script.bedroom_remote_control:

@@ -97,7 +97,6 @@ all_motion_sensors:
     - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
-    - binary_sensor.nodemcu1
 
 links:
   entities:
@@ -116,7 +115,6 @@ motion:
     - binary_sensor.office_sensor
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
-    - binary_sensor.nodemcu1
 
 lights:
   entities:
@@ -134,7 +132,6 @@ bedroom:
   entities:
     - media_player.bedroom
     - light.bedroom
-    - binary_sensor.nodemcu1
     - switch.electric_blanket
 
 diningroom:

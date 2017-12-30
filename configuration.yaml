@@ -127,11 +127,6 @@ switch:
     host: 192.168.1.121
 
 binary_sensor:
-  - platform: mqtt
-    state_topic: 'home/nodemcu/1/motion'
-    device_class: 'motion'
-    name: 'nodemcu1'
-    value_template: ' {{ value_json.motion }}'
   - platform: command_line
     name: hall_motion
     command:  !secret get_hall_motion_status
