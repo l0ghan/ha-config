@@ -6,6 +6,7 @@ default_view:
     - group.lights
     - group.motion
     - group.weather
+    - group.automaticlights
 
 cameras:
   view: yes
@@ -130,6 +131,11 @@ lights:
     - switch.desk_lights_switch
     - switch.christmas_lights
     - sensor.lights_on_count
+
+automaticlights:
+  entities:
+    - input_boolean.enable_automatic_hall_lights
+    - input_boolean.enable_automation_office_lights
 
 bedroom:
   entities:

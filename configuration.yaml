@@ -151,6 +151,10 @@ input_boolean:
     initial: on
   enable_cameras:
     initial: on
+  enable_automatic_hall_lights:
+    initial: on
+  enable_automation_office_lights:
+    initial: on
 
 panel_custom:
   - name: floorplan

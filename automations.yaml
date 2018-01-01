@@ -4,9 +4,12 @@
     platform: state
     to: 'on'
   condition:
-    condition: state
-    entity_id: 'switch.desk_lights_switch'
-    state: 'off'
+    - condition: state
+      entity_id: switch.desk_lights_switch
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.enable_automation_office_lights
+      state: 'on'
   action:  
   - service: switch.turn_on
     data:
@@ -23,9 +26,12 @@
       minutes: 10
     to: 'off'
   condition:
-    condition: state
-    entity_id: switch.desk_lights_switch
-    state: 'on'
+    - condition: state
+      entity_id: switch.desk_lights_switch
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.enable_automation_office_lights
+      state: 'on'
   action:
   - service: switch.turn_off
     data:
@@ -249,12 +255,12 @@
     platform: state
     to: 'on'
   condition:
-    - condition: time
-      after: '07:00'
-      before: '19:00'
     - condition: state
       entity_id: light.hall
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.enable_automatic_hall_lights
+      state: 'on'
   action:
   - service: light.turn_on
     data:
@@ -271,11 +277,11 @@
     for:
       minutes: 3
   condition:
-    - condition: time
-      after: '07:00'
-      before: '19:00'
     - condition: state
       entity_id: light.hall
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.enable_automatic_hall_lights
       state: 'on'
   action:
   - service: light.turn_off

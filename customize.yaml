@@ -236,3 +236,11 @@ group.automation:
   icon: mdi:robot
 group.network:
   icon: mdi:server-network
+group.automaticlights:
+  friendly_name: Automatic Lights
+input_boolean.enable_automatic_hall_lights:
+  friendly_name: Hall
+  icon: mdi:door-open
+input_boolean.enable_automation_office_lights:
+  friendly_name: Office
+  icon: mdi:laptop
