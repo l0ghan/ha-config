@@ -75,7 +75,7 @@
     motion_on_count:
       friendly_name: 'Motion Sensors On'
       value_template: >
-        {%- set sensors = [states.binary_sensor.thomas_sensor, states.binary_sensor.office_sensor, states.binary_sensor.hall_motion, states.binary_sensor.landing_motion] %}
+        {%- set sensors = [states.binary_sensor.thomas_sensor, states.binary_sensor.office_motion, states.binary_sensor.hall_motion, states.binary_sensor.landing_motion] %}
         {% for entity in sensors if entity.state == 'on' %}
           {% if loop.last %}
             {{loop.index}} 

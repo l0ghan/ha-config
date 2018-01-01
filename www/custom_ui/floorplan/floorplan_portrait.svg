@@ -226,12 +226,12 @@
      style="fill:#7e8086;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      style="fill:url(#pattern5262);fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="binary_sensor.office_sensor"
+     id="binary_sensor.office_motion"
      width="161.30873"
      height="113.31387"
      x="230.16327"
      y="411.36462"
-     inkscape:label="binary_sensor.office_sensor" />
+     inkscape:label="binary_sensor.office_motion" />
   <rect
      inkscape:label="KitchenFloor"
      y="15.07386"

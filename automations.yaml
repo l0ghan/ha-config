@@ -1,6 +1,6 @@
 - alias: Turn on office lights on motion
   trigger:
-  - entity_id: binary_sensor.office_sensor
+  - entity_id: binary_sensor.office_motion
     platform: state
     to: 'on'
   condition:
@@ -18,7 +18,7 @@
 - alias: Turn off office lights when there is no longer any motion
   trigger:
   - platform: state
-    entity_id: binary_sensor.office_sensor
+    entity_id: binary_sensor.office_motion
     for:
       minutes: 10
     to: 'off'
@@ -72,7 +72,7 @@
   - entity_id: binary_sensor.landing_motion
     platform: state
     to: 'on'
-  - entity_id: binary_sensor.office_sensor
+  - entity_id: binary_sensor.office_motion
     platform: state
     to: 'on'
   - entity_id: binary_sensor.thomas_sensor

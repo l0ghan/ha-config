@@ -128,19 +128,6 @@ switch:
 
 binary_sensor:
   - platform: command_line
-    name: hall_motion
-    command:  !secret get_hall_motion_status
-    value_template: >-
-      {%- if value == "2" -%}
-        motion
-      {%- else -%}
-        none
-      {%- endif -%}
-    payload_on: motion
-    payload_off: none
-    device_class: motion
-    scan_interval: 5
-  - platform: command_line
     name: landing_motion
     command:  !secret get_landing_motion_status
     value_template: >-
@@ -153,6 +140,11 @@ binary_sensor:
     payload_off: none
     device_class: motion
     scan_interval: 5
+  - platform: mqtt
+    state_topic: 'home/nodemcu/2/motion'
+    device_class: 'motion'
+    name: office_motion
+    value_template: ' {{ value_json.motion }}'
 
 input_boolean:
   enable_motion_alerts:

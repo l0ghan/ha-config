@@ -49,7 +49,7 @@ sensor.lynette_iphone_battery_state:
   hidden: true
 sensor.office_temperature:
   friendly_name: Office Temperature
-binary_sensor.office_sensor:
+binary_sensor.office_motion:
   device_class: motion
   friendly_name: Office
 group.office:
