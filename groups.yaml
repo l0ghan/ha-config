@@ -11,11 +11,11 @@ cameras:
   view: yes
   icon: mdi:cctv
   entities:
+    - group.camera_thomas
     - group.camera_hall
     - group.camera_landing
     - group.camera_drive
     - group.camera_garden
-    - group.camera_thomas
     - group.camera_controls
 
 remote:

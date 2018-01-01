@@ -184,6 +184,7 @@ group.camera_controls:
   friendly_name: Camera Controls
 binary_sensor.hall_sensor:
   friendly_name: Hall
+  device_class: motion
   show_last_changed: true
 binary_sensor.landing_motion:
   friendly_name: Landing
@@ -231,3 +232,7 @@ sensor.secrets:
   hidden: true
   icon: mdi:file-lock
   base_url: !secret base_url
+group.automation:
+  icon: mdi:robot
+group.network:
+  icon: mdi:server-network
