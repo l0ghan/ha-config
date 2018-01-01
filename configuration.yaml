@@ -7,8 +7,6 @@ homeassistant:
   time_zone: Europe/London
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
-  whitelist_external_dirs:
-    - /home/homeassistant/.homeassistant/www
 
 frontend:
   themes: !include themes.yaml
