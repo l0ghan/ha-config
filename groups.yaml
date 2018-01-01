@@ -118,7 +118,6 @@ motion:
     - binary_sensor.office_motion
     - binary_sensor.hall_motion
     - binary_sensor.landing_motion
-    - binary_sensor.nodemcu2
 
 lights:
   entities:
@@ -167,7 +166,6 @@ office:
   entities:
     - switch.desk_lights_switch
     - binary_sensor.office_motion
-    - binary_sensor.nodemcu2
     - light.backlights
     - sensor.office_temperature
     - sensor.office_luminance
