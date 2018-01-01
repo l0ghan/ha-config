@@ -182,7 +182,7 @@ sensor.lights_on_count:
   state_card_mode: badges
 group.camera_controls:
   friendly_name: Camera Controls
-binary_sensor.hall_motion:
+binary_sensor.hall_sensor:
   friendly_name: Hall
   show_last_changed: true
 binary_sensor.landing_motion:

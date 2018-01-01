@@ -143,7 +143,7 @@ binary_sensor:
   - platform: mqtt
     state_topic: 'home/nodemcu/2/motion'
     device_class: 'motion'
-    name: office_motion
+    name: 'office_motion'
     value_template: ' {{ value_json.motion }}'
 
 input_boolean:

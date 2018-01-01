@@ -66,7 +66,7 @@
 
 - alias: Motion alert
   trigger:
-  - entity_id: binary_sensor.hall_motion
+  - entity_id: binary_sensor.hall_sensor
     platform: state
     to: 'on'
   - entity_id: binary_sensor.landing_motion
@@ -93,7 +93,7 @@
         file:
           url: >
             {% set e = trigger.entity_id %}
-            {%- if e == "binary_sensor.hall_motion" -%}
+            {%- if e == "binary_sensor.hall_sensor" -%}
             {% set url = states.camera.hall.attributes.entity_picture %}
             {%- elif e == "binary_sensor.landing_motion" -%}
             {% set url = states.camera.landing.attributes.entity_picture %}
@@ -245,7 +245,7 @@
 
 - alias: Turn on hall lights on motion
   trigger:
-  - entity_id: binary_sensor.hall_motion
+  - entity_id: binary_sensor.hall_sensor
     platform: state
     to: 'on'
   condition:
@@ -263,7 +263,7 @@
 - alias: Turn off hall lights when there is no longer any motion
   trigger:
   - platform: state
-    entity_id: binary_sensor.hall_motion
+    entity_id: binary_sensor.hall_sensor
     to: 'off'
     for:
       minutes: 3
