@@ -249,6 +249,9 @@
     platform: state
     to: 'on'
   condition:
+    - condition: time
+      after: '07:00'
+      before: '19:00'
     - condition: state
       entity_id: light.hall
       state: 'off'
@@ -268,9 +271,12 @@
     for:
       minutes: 3
   condition:
-  - condition: time
-    after: '07:00'
-    before: '22:00'
+    - condition: time
+      after: '07:00'
+      before: '19:00'
+    - condition: state
+      entity_id: light.hall
+      state: 'on'
   action:
   - service: light.turn_off
     data:
