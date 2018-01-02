@@ -14,10 +14,11 @@ sensor.desk_lights_voltage:
 switch.desk_lights_switch:
   default_view:
     friendly_name: Office
+  friendly_name: Office
   group:
     group.office:
       friendly_name: Light
-  friendly_name: Office
+  homebridge_visible: 'true'
   icon: mdi:lightbulb
 zwave.aeotec_zw090_zstick_gen5_eu:
   hidden: true
@@ -84,20 +85,6 @@ binary_sensor.thomas_sensor:
       friendly_name: Motion
 sensor.thomas_temperature:
   friendly_name: Thomas' Room Temperature
-sensor.process_openvpn:
-  friendly_name: OpenVPN
-  icon: mdi:lock-open
-sensor.process_plex_media_server:
-  friendly_name: Plex Media Server
-  icon: mdi:plex
-sensor.process_pureftpd:
-  friendly_name: Pure FTP
-  icon: mdi:server-security
-sensor.process_transmissiondaemon:
-  friendly_name: Transmission
-  icon: mdi:magnet-on
-group.processes:
-  friendly_name: Processes
 group.bedroom:
   friendly_name: Bedroom
 group.diningroom:
@@ -142,8 +129,6 @@ sensor.fibaro_office_battery_level:
 sensor.fibaro_thomas_battery_level:
   friendly_name: Thomas' Fibaro
   show_last_changed: true
-group.pihole_stats:
-  friendly_name: Pi-Hole Stats
 group.all_automations:
   homebridge_hidden: true
 group.all_devices:
@@ -154,9 +139,6 @@ switch.wake_on_lan:
   homebridge_hidden: true
 switch.flux:
   homebridge_hidden: true
-sensor.process_homebridge:
-  friendly_name: HomeBridge
-  icon: mdi:home-automation
 script.camera_thomas_bed:
   friendly_name: Face bed
   icon: mdi:hotel
@@ -244,3 +226,17 @@ input_boolean.enable_automatic_hall_lights:
 input_boolean.enable_automation_office_lights:
   friendly_name: Office
   icon: mdi:laptop
+light.bedroom:
+  homebridge_visible: 'true'
+light.dining_room:
+  homebridge_visible: 'true'
+light.living_room_tv_area:
+  homebridge_visible: 'true'
+light.downstairs_toilet:
+  homebridge_visible: 'true'
+light.hall:
+  homebridge_visible: 'true'
+light.living_room_play_area:
+  homebridge_visible: 'true'
+switch.christmas_lights:
+  homebridge_visible: 'true'

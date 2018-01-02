@@ -10,29 +10,6 @@
     - summary
     - apparent_temperature
 
-- platform: systemmonitor
-  name: pi_status
-  resources:
-    - type: disk_use_percent
-      arg: /
-    - type: disk_use_percent
-      arg: /mnt
-    - type: memory_use_percent
-    - type: since_last_boot
-    - type: load_1m
-    - type: load_5m
-    - type: load_15m
-    - type: process
-      arg: transmission-daemon
-    - type: process
-      arg: Plex Media Server
-    - type: process
-      arg: pure-ftpd
-    - type: process
-      arg: openvpn
-    - type: process
-      arg: homebridge
-
 - platform: template
   sensors:
     secrets:
@@ -72,29 +49,6 @@
             {{loop.index}} 
           {% endif %}
         {% endfor %}
-    motion_on_count:
-      friendly_name: 'Motion Sensors On'
-      value_template: >
-        {%- set sensors = [states.binary_sensor.thomas_sensor, states.binary_sensor.office_motion, states.binary_sensor.hall_sensor, states.binary_sensor.landing_motion] %}
-        {% for entity in sensors if entity.state == 'on' %}
-          {% if loop.last %}
-            {{loop.index}} 
-          {% endif %}
-        {% endfor %}
-    last_camera_motion:
-      value_template: >
-        {%- set sensors = [states.binary_sensor.hall_sensor, states.binary_sensor.landing_motion] %}
-        {% for sensor in sensors %}
-          {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
-            {{ sensor.name }}
-          {% endif %}
-        {% endfor %}
-
-- platform: pi_hole
-  monitored_conditions:
-    - ads_blocked_today
-    - ads_percentage_today
-    - unique_clients
 
 - platform: command_line
   name: Last Backup

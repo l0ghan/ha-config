@@ -60,16 +60,12 @@ recorder:
       - group.all_switches
       - sensor.pihole_ads_percentage_today
       - group.all_motion_sensors
-      - group.pihole_stats
-      - sensor.pihole_ads_percentage_blocked_today
-      - sensor.pihole_ads_blocked_today
       - sensor.lights_on_count
       - automation.turn_on_office_lights_on_motion
       - switch.electric_blanket
       - group.motion
       - group.thomas
       - sensor.ha_uptime
-      - sensor.motion_on_count
 
 updater:
 group: !include groups.yaml

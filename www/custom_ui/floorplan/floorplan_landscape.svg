@@ -34,6 +34,11 @@
      id="defs4489">
     <pattern
        inkscape:collect="always"
+       xlink:href="#pattern5262"
+       id="pattern5748"
+       patternTransform="rotate(45.000001,9.7065975e-6,-8.3515441e-6)" />
+    <pattern
+       inkscape:collect="always"
        xlink:href="#pattern5503"
        id="pattern5264"
        patternTransform="rotate(45.000001,-2.6667147e-6,-3.3407998e-6)" />
@@ -135,13 +140,13 @@
      inkscape:window-height="1017"
      id="namedview4487"
      showgrid="true"
-     inkscape:zoom="8.0000002"
-     inkscape:cx="732.45797"
-     inkscape:cy="531.77865"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="257.03642"
+     inkscape:cy="259.00176"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g5567"
+     inkscape:current-layer="svg4485"
      inkscape:snap-nodes="true"
      inkscape:snap-grids="true"
      inkscape:snap-object-midpoints="true"
@@ -1380,6 +1385,14 @@
      x="224.79193"
      y="225.34695"
      inkscape:label="HallFloor" />
+  <rect
+     inkscape:label="binary_sensor.hall_sensor"
+     y="237.85449"
+     x="229.86731"
+     height="356.36075"
+     width="162.12123"
+     id="binary_sensor.hall_sensor"
+     style="fill:url(#pattern5748);fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      style="fill:#7e8086;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="light.downstairs_toilet"

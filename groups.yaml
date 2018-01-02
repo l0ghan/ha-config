@@ -39,10 +39,8 @@ network:
   view: yes
   entities:
     - group.pi_status
-    - group.processes
     - group.batteries
     - group.links
-    - group.pihole_stats
 
 automation:
   view: yes
@@ -187,10 +185,7 @@ pi_status:
   entities:
     - sensor.since_last_boot
     - sensor.ha_uptime
-    - sensor.ram_used
     - sensor.cpu_temperature
-    - sensor.disk_used_
-    - sensor.disk_used_mnt
     - sensor.speedtest_download
     - sensor.last_backup
     - group.load
@@ -201,21 +196,6 @@ load:
     - sensor.average_load_1m
     - sensor.average_load_5m
     - sensor.average_load_15m
-
-pihole_stats:
-  name: PiHole Stats
-  entities:
-    - sensor.pihole_ads_blocked_today
-    - sensor.pihole_ads_percentage_blocked_today
-    - sensor.pihole_dns_unique_clients
-    
-processes:
-  entities:
-    - sensor.process_transmissiondaemon
-    - sensor.process_openvpn
-    - sensor.process_plex_media_server
-    - sensor.process_pureftpd
-    - sensor.process_homebridge
 
 bedroom_remote:
   entities:
