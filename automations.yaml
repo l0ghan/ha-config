@@ -265,9 +265,6 @@
   - service: light.turn_on
     data:
       entity_id: light.hall
-  - service: notify.slack
-    data:
-      message: ":bulb: Turning on the light in the hall."
 
 - alias: Turn off hall lights when there is no longer any motion
   trigger:
@@ -287,6 +284,3 @@
   - service: light.turn_off
     data:
       entity_id: light.hall
-  - service: notify.slack
-    data:
-      message: ":bulb: Turning the hall light off."
