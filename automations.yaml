@@ -206,29 +206,29 @@
     data:
       message: ':fire: Enough warmth. Turning off the electric blanket.'
 
-- alias: Turn off Christmas lights at midnight
-  trigger:
-    - platform: time
-      at: '00:00:01'
-  action:
-  - service: switch.turn_off
-    data:
-      entity_id: switch.christmas_lights
-  - service: notify.slack
-    data:
-      message: ':christmas_tree: Time for bed. Turning the Christmas lights off.'
+# - alias: Turn off Christmas lights at midnight
+#   trigger:
+#     - platform: time
+#       at: '00:00:01'
+#   action:
+#   - service: switch.turn_off
+#     data:
+#       entity_id: switch.christmas_lights
+#   - service: notify.slack
+#     data:
+#       message: ':christmas_tree: Time for bed. Turning the Christmas lights off.'
 
-- alias: Turn on Christmas lights at sunset
-  trigger:
-    - platform: sun
-      event: sunset
-  action:
-  - service: switch.turn_on
-    data:
-      entity_id: switch.christmas_lights
-  - service: notify.slack
-    data:
-      message: ':christmas_tree: Sunset. Turning the Christmas lights on.'
+# - alias: Turn on Christmas lights at sunset
+#   trigger:
+#     - platform: sun
+#       event: sunset
+#   action:
+#   - service: switch.turn_on
+#     data:
+#       entity_id: switch.christmas_lights
+#   - service: notify.slack
+#     data:
+#       message: ':christmas_tree: Sunset. Turning the Christmas lights on.'
 
 - alias: Alert on bad logon attempts
   trigger:
